@@ -1,0 +1,151 @@
+./soup.py --n 8192 --seed 2 --epochs 1000000
+
+612800      1.3918      484.3         6  3456.4s
+
+*** state transition: complexity crossed 1.0 at epoch 612800 ***
+
+most common whole tapes:
+  x6     |0000000000000000000000000000000000000000000000000000000000000000|
+         exact self-copy 0% of trials, median 0/64 bytes copied into the food tape
+  x2     |   ,    ..<[. ,}<] },,} ]<}. ,}<] },,} ]<}, .[<..    ,    ..    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x2     |0000     0 >       00  0   <<0 [  ,}<]<},[ +<    00 0   0000000 |
+         exact self-copy 0% of trials, median 7/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x3412  |0000000000000000|
+  x626   |                |
+  x483   |................|
+
+./soup.py --n 131072 --seed 1 --epochs 1000000
+
+ 72500      1.9909      400.9       164  6366.2s
+
+*** state transition: complexity crossed 1.0 at epoch 72500 ***
+
+most common whole tapes:
+  x164   |[<    ,,       }]           ] } } ]           ]}       ,,    <[ |
+         exact self-copy 0% of trials, median 57/64 bytes copied into the food tape
+  x161   | [<    ,,       }]           ] } } ]           ]}       ,,    <[|
+         exact self-copy 0% of trials, median 57/64 bytes copied into the food tape
+  x133   |[<    ,,       }]           ] } } ]           ]}       ,,    <[ |
+         exact self-copy 0% of trials, median 22/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x18077 |[<    ,,       }|
+  x14429 | [<    ,,       |
+  x13480 |[[[[[[[[[[[[[[[[|
+
+ ./soup.py --n 131072 --seed 3 --epochs 1000000
+
+  2300      1.3943      334.8       326   177.9s
+
+*** state transition: complexity crossed 1.0 at epoch 2300 ***
+
+most common whole tapes:
+  x326   |    [  { .     >]   , ,, -    ]]    - ,, ,   ]>     . {  [      |
+         exact self-copy 0% of trials, median 62/64 bytes copied into the food tape
+  x323   |      [  { .     >]   , ,, -    ]]    - ,, ,   ]>     . {  [    |
+         exact self-copy 0% of trials, median 62/64 bytes copied into the food tape
+  x166   |    [  { .     >]   , ,, -    ]]    - ,, ,   ]>     . {  [      |
+         exact self-copy 0% of trials, median 44/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x34359 |                |
+  x21616 |                |
+  x15184 |    [  { .     >|
+
+  ./soup.py --n 131072 --seed 4 --epochs 1000000
+
+   2900      1.9769      247.7       378   229.7s
+
+*** state transition: complexity crossed 1.0 at epoch 2900 ***
+
+most common whole tapes:
+  x378   |     [[< ,}                  ]                  }, <[[      .   |
+         exact self-copy 0% of trials, median 16/64 bytes copied into the food tape
+  x378   |   .      [[< ,}                  ]                  }, <[[     |
+         exact self-copy 0% of trials, median 16/64 bytes copied into the food tape
+  x255   |     [[< ,}                  ]                  }, <[[      .   |
+         exact self-copy 0% of trials, median 29/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x46786 | [[< ,}         |
+  x31399 |[[< ,}          |
+  x31061 |,}              |
+
+./soup.py --n 131072 --seed 6 --epochs 1000000
+
+28400      1.8699      156.3        31  2908.5s
+
+*** state transition: complexity crossed 1.0 at epoch 28400 ***
+
+most common whole tapes:
+  x31    |<<  [>   [>{  .        ]        .  {>[        [        [     <  |
+         exact self-copy 0% of trials, median 14/64 bytes copied into the food tape
+  x29    |  <     [        [        [>{  .        ]        .  {>[   >[  <<|
+         exact self-copy 0% of trials, median 14/64 bytes copied into the food tape
+  x29    |  <      [>{  .        ]  ,     .  {>[        [        [     <  |
+         exact self-copy 0% of trials, median 5/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x33822 |   [>{  .       |
+  x32875 |    [>{  .      |
+  x32587 |  [>{  .        |
+
+./soup.py --n 131072 --seed 8 --epochs 1000000
+
+  17800      3.4776     2998.9        20  1773.2s
+
+*** state transition: complexity crossed 1.0 at epoch 17800 ***
+
+most common whole tapes:
+  x20    |[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[|
+         exact self-copy 0% of trials, median 0/64 bytes copied into the food tape
+  x11    | [,  [<   <  {   > >[.    ,,>  {  ]{{{{]  {  >,,    .[  .[ .[[ {|
+         exact self-copy 0% of trials, median 34/64 bytes copied into the food tape
+  x11    |{ [[. [.  [.    ,,>  {  ]{{{{]  {  >,,    .[> >   {  <   <[  ,[ |
+         exact self-copy 0% of trials, median 34/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x105969 |{  ]{{{{]  {  >,|
+  x105828 |,>  {  ]{{{{]  {|
+  x105296 | {  ]{{{{]  {  >|
+
+./soup.py --n 131072 --seed 9 --epochs 1000000
+
+   2900      2.5467      292.5        81   234.2s
+
+*** state transition: complexity crossed 1.0 at epoch 2900 ***
+
+most common whole tapes:
+  x81    |{         > <  <       [ <   }  ,  ]       ]  ,  }   < [  {   {{|
+         exact self-copy 0% of trials, median 11/64 bytes copied into the food tape
+  x67    |{   {  [ <   }  ,  ]       ]  ,  }   < [       <  < >         {{|
+         exact self-copy 0% of trials, median 11/64 bytes copied into the food tape
+  x43    |{  [ <   }  ,  ]       ]  ,  }   < [       <  < {  {    { }  }>>|
+         exact self-copy 0% of trials, median 10/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x21683 | <       [ <   }|
+  x20683 |<  <       [ <  |
+  x20622 |  <       [ <   |
+
+./soup.py --n 131072 --seed 14 --epochs 1000000
+
+ 6000      1.6927      385.6       177   526.2s
+
+*** state transition: complexity crossed 1.0 at epoch 6000 ***
+
+most common whole tapes:
+  x177   | [{        [     <},]    ]  ]    ],}<     [       {           {}|
+         exact self-copy 0% of trials, median 13/64 bytes copied into the food tape
+  x174   |}{           {       [     <},]    ]  ]    ],}<     [        {[ |
+         exact self-copy 0% of trials, median 13/64 bytes copied into the food tape
+  x36    |            {      [     <},]    ]  ]    ],}<     [          {  |
+         exact self-copy 0% of trials, median 9/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x16666 |        [     <}|
+  x14546 |       [     <},|
+  x13195 |           [    |

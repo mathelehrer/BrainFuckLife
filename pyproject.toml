@@ -1,0 +1,38 @@
+[project]
+name = "brainfucklife"
+version = "0.1.0"
+description = "A Brainfuck interpreter, and BFF - the self-modifying variant in which self-replicating programs emerge from a soup of noise."
+readme = "README.md"
+# Matches BlenderMathAnim, the other public repo of this workspace.
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "NumberCruncher", email = "physik.martin@gmail.com" }]
+# The interpreter itself needs nothing but the standard library; the pin comes
+# from the workspace, which is locked to 3.13 by the bpy wheels.
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    # soup.py: the tape array and the run statistics
+    "numpy",
+    # the plots in the walkthrough notebook
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+# The walkthrough notebook. Kept out of the default install so that the
+# interpreter stays dependency-light.
+notebook = ["jupyterlab", "ipykernel", "ipywidgets"]
+# brotli is the compressor the BFF paper uses to approximate Kolmogorov
+# complexity; without it soup.py falls back to zlib, which shifts the
+# complexity numbers slightly.
+complexity = ["brotli"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+# Flat layout, the same as BlenderMathAnim: the modules live at the repo root
+# and are listed explicitly so that the editable install exposes them as
+# top-level imports (import bff, from bff import soup) and so that build-time
+# auto-discovery does not trip over examples/ or the reference material.
+[tool.setuptools]
+packages = ["bff", "viz"]
+py-modules = ["bf"]

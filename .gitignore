@@ -1,0 +1,14 @@
+# --- build artifacts ---
+__pycache__/
+*.pyc
+*.egg-info/
+# soup.c is compiled on demand by soup.py; the .so is per-machine
+libsoup.so
+*.o
+
+# --- third-party material, NOT ours to redistribute ---
+# The arXiv source of Aguera y Arcas et al., "Computational Life"
+# (arXiv:2406.19108) is kept here for reference while working on the video.
+# It carries no licence granting redistribution, so it stays out of this
+# public repository. The paper itself is at https://arxiv.org/abs/2406.19108
+AgueraYArcas/

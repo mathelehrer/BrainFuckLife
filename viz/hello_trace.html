@@ -1,0 +1,497 @@
+<title>hello.bf — cell timeline</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --surface-1:      #fcfcfb;
+    --surface-2:      #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --grid:           #e1e0d9;
+    --baseline:       #c3c2b7;
+    --border:         rgba(11,11,11,0.10);
+    --depth0:         #c3c2b7;
+    --depth1:         #f6c1a0;
+    --depth2:         #eb6834;
+    --tooltip-bg:     #0b0b0b;
+    --tooltip-fg:     #fcfcfb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --surface-1:      #1a1a19;
+      --surface-2:      #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --grid:           #2c2c2a;
+      --baseline:       #383835;
+      --border:         rgba(255,255,255,0.10);
+      --depth0:         #383835;
+      --depth1:         #a8623a;
+      --depth2:         #d95926;
+      --tooltip-bg:     #fcfcfb;
+      --tooltip-fg:     #0b0b0b;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --surface-1:      #1a1a19;
+    --surface-2:      #0d0d0d;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #898781;
+    --grid:           #2c2c2a;
+    --baseline:       #383835;
+    --border:         rgba(255,255,255,0.10);
+    --depth0:         #383835;
+    --depth1:         #a8623a;
+    --depth2:         #d95926;
+    --tooltip-bg:     #fcfcfb;
+    --tooltip-fg:     #0b0b0b;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--surface-2);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .viz-root {
+    background: var(--surface-2);
+    padding: 28px 20px 60px;
+    display: flex;
+    justify-content: center;
+  }
+  .page {
+    width: 100%;
+    max-width: 760px;
+  }
+  h1 {
+    font-size: 1.4rem;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .sub {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin: 0 0 18px;
+    max-width: 62ch;
+    line-height: 1.5;
+  }
+  .source {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    word-break: break-all;
+    margin-bottom: 22px;
+  }
+  .source b { color: var(--text-primary); font-weight: 600; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    align-items: flex-end;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--grid);
+  }
+  .legend-block { display: flex; flex-direction: column; gap: 6px; }
+  .legend-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+  .ramp-bar {
+    width: 180px;
+    height: 10px;
+    border-radius: 3px;
+    background: linear-gradient(to right,
+      #cde2fb,#b7d3f6,#9ec5f4,#86b6ef,#6da7ec,#5598e7,#3987e5,#2a78d6,#256abf,#1c5cab,#184f95,#104281,#0d366b);
+  }
+  .ramp-ticks {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    width: 180px;
+    font-variant-numeric: tabular-nums;
+  }
+  .depth-swatches { display: flex; gap: 12px; }
+  .depth-swatch { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--text-secondary); }
+  .depth-swatch i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+  .chart-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .col-headers {
+    display: flex;
+    padding-left: 20px;
+  }
+  .col-headers div {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.35;
+  }
+  .col-headers div b {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.74rem;
+    font-weight: 600;
+  }
+  .canvas-row {
+    position: relative;
+    display: flex;
+  }
+  #stripe, #heat {
+    display: block;
+    border-radius: 4px;
+  }
+  #stripe { margin-right: 6px; }
+  #overlay {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    pointer-events: none;
+  }
+  .phase-label {
+    position: absolute;
+    left: 100%;
+    margin-left: 10px;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    transform: translateY(-50%);
+  }
+  .tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: var(--tooltip-bg);
+    color: var(--tooltip-fg);
+    font-size: 0.74rem;
+    line-height: 1.5;
+    padding: 7px 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    opacity: 0;
+    transition: opacity 0.08s ease;
+    z-index: 20;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .tooltip b { font-weight: 600; }
+
+  .detail {
+    margin-top: 34px;
+  }
+  .detail h2 {
+    font-size: 0.95rem;
+    margin: 0 0 4px;
+  }
+  .detail .sub { margin-bottom: 14px; }
+  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.78rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  thead th {
+    text-align: left;
+    font-family: system-ui, sans-serif;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--grid);
+    position: sticky;
+    top: 0;
+    background: var(--surface-1);
+  }
+  tbody td {
+    padding: 5px 10px;
+    border-bottom: 1px solid var(--grid);
+    color: var(--text-secondary);
+    white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  .op-cell { color: var(--text-primary); font-weight: 600; }
+  .val-swatch {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 1px 0;
+    color: #0b0b0b;
+    font-weight: 600;
+  }
+  .depth-pill {
+    display: inline-block;
+    min-width: 16px;
+    text-align: center;
+    border-radius: 999px;
+    padding: 1px 7px;
+    font-weight: 700;
+    color: #0b0b0b;
+  }
+  .out-char {
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .dim { color: var(--text-muted); }
+
+  footer {
+    margin-top: 28px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+</style>
+
+<div class="viz-root">
+<div class="page">
+  <h1>hello.bf — a cell timeline</h1>
+  <p class="sub">
+    Every cell the interpreter touches, tracked step by step. Runs of consecutive
+    <code>+</code>/<code>-</code> collapse into one step; everything else
+    (<code>&gt; &lt; . [ ]</code>) is its own row. The stripe on the left marks
+    how deeply nested the loop is at that moment. Hover the grid for exact values.
+  </p>
+  <div class="source" id="source"></div>
+
+  <div class="legend">
+    <div class="legend-block">
+      <span class="legend-label">Cell value</span>
+      <div class="ramp-bar"></div>
+      <div class="ramp-ticks"><span>0</span><span>~57</span><span>114</span></div>
+    </div>
+    <div class="legend-block">
+      <span class="legend-label">Loop depth</span>
+      <div class="depth-swatches">
+        <span class="depth-swatch"><i style="background:var(--depth0)"></i>0 · top level</span>
+        <span class="depth-swatch"><i style="background:var(--depth1)"></i>1</span>
+        <span class="depth-swatch"><i style="background:var(--depth2)"></i>2 · innermost</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="col-headers" id="colHeaders"></div>
+    <div class="canvas-row">
+      <canvas id="stripe"></canvas>
+      <canvas id="heat"></canvas>
+      <canvas id="overlay"></canvas>
+    </div>
+  </div>
+
+  <div class="detail">
+    <h2>Phase 2, zoomed in — printing the output</h2>
+    <p class="sub">Pointer walks cells 2–6, nudging each with a few <code>+</code>/<code>-</code> right before printing it, so cells 3 and 5 get reused for several letters.</p>
+    <div class="table-scroll">
+      <table id="detailTable"></table>
+    </div>
+  </div>
+
+  <footer>690 steps total · 7 cells used (0–6) · generated from <code>examples/hello.bf</code></footer>
+</div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+const DATA = {"n_cells":7,"steps":[["+8",0,8,0,null],["[ (enter)",0,8,1,null],[">",1,0,1,null],["+4",1,4,1,null],["[ (enter)",1,4,2,null],[">",2,0,2,null],["+2",2,2,2,null],[">",3,0,2,null],["+3",3,3,2,null],[">",4,0,2,null],["+3",4,3,2,null],[">",5,0,2,null],["+1",5,1,2,null],["<",4,3,2,null],["<",3,3,2,null],["<",2,2,2,null],["<",1,4,2,null],["-1",1,3,2,null],["] (loop)",1,3,2,null],[">",2,2,2,null],["+2",2,4,2,null],[">",3,3,2,null],["+3",3,6,2,null],[">",4,3,2,null],["+3",4,6,2,null],[">",5,1,2,null],["+1",5,2,2,null],["<",4,6,2,null],["<",3,6,2,null],["<",2,4,2,null],["<",1,3,2,null],["-1",1,2,2,null],["] (loop)",1,2,2,null],[">",2,4,2,null],["+2",2,6,2,null],[">",3,6,2,null],["+3",3,9,2,null],[">",4,6,2,null],["+3",4,9,2,null],[">",5,2,2,null],["+1",5,3,2,null],["<",4,9,2,null],["<",3,9,2,null],["<",2,6,2,null],["<",1,2,2,null],["-1",1,1,2,null],["] (loop)",1,1,2,null],[">",2,6,2,null],["+2",2,8,2,null],[">",3,9,2,null],["+3",3,12,2,null],[">",4,9,2,null],["+3",4,12,2,null],[">",5,3,2,null],["+1",5,4,2,null],["<",4,12,2,null],["<",3,12,2,null],["<",2,8,2,null],["<",1,1,2,null],["-1",1,0,2,null],["] (exit)",1,0,2,null],[">",2,8,1,null],["+1",2,9,1,null],[">",3,12,1,null],["+1",3,13,1,null],[">",4,12,1,null],["-1",4,11,1,null],[">",5,4,1,null],[">",6,0,1,null],["+1",6,1,1,null],["[ (enter)",6,1,2,null],["<",5,4,2,null],["] (loop)",5,4,2,null],["<",4,11,2,null],["] (loop)",4,11,2,null],["<",3,13,2,null],["] (loop)",3,13,2,null],["<",2,9,2,null],["] (loop)",2,9,2,null],["<",1,0,2,null],["] (exit)",1,0,2,null],["<",0,8,1,null],["-1",0,7,1,null],["] (loop)",0,7,1,null],[">",1,0,1,null],["+4",1,4,1,null],["[ (enter)",1,4,2,null],[">",2,9,2,null],["+2",2,11,2,null],[">",3,13,2,null],["+3",3,16,2,null],[">",4,11,2,null],["+3",4,14,2,null],[">",5,4,2,null],["+1",5,5,2,null],["<",4,14,2,null],["<",3,16,2,null],["<",2,11,2,null],["<",1,4,2,null],["-1",1,3,2,null],["] (loop)",1,3,2,null],[">",2,11,2,null],["+2",2,13,2,null],[">",3,16,2,null],["+3",3,19,2,null],[">",4,14,2,null],["+3",4,17,2,null],[">",5,5,2,null],["+1",5,6,2,null],["<",4,17,2,null],["<",3,19,2,null],["<",2,13,2,null],["<",1,3,2,null],["-1",1,2,2,null],["] (loop)",1,2,2,null],[">",2,13,2,null],["+2",2,15,2,null],[">",3,19,2,null],["+3",3,22,2,null],[">",4,17,2,null],["+3",4,20,2,null],[">",5,6,2,null],["+1",5,7,2,null],["<",4,20,2,null],["<",3,22,2,null],["<",2,15,2,null],["<",1,2,2,null],["-1",1,1,2,null],["] (loop)",1,1,2,null],[">",2,15,2,null],["+2",2,17,2,null],[">",3,22,2,null],["+3",3,25,2,null],[">",4,20,2,null],["+3",4,23,2,null],[">",5,7,2,null],["+1",5,8,2,null],["<",4,23,2,null],["<",3,25,2,null],["<",2,17,2,null],["<",1,1,2,null],["-1",1,0,2,null],["] (exit)",1,0,2,null],[">",2,17,1,null],["+1",2,18,1,null],[">",3,25,1,null],["+1",3,26,1,null],[">",4,23,1,null],["-1",4,22,1,null],[">",5,8,1,null],[">",6,1,1,null],["+1",6,2,1,null],["[ (enter)",6,2,2,null],["<",5,8,2,null],["] (loop)",5,8,2,null],["<",4,22,2,null],["] (loop)",4,22,2,null],["<",3,26,2,null],["] (loop)",3,26,2,null],["<",2,18,2,null],["] (loop)",2,18,2,null],["<",1,0,2,null],["] (exit)",1,0,2,null],["<",0,7,1,null],["-1",0,6,1,null],["] (loop)",0,6,1,null],[">",1,0,1,null],["+4",1,4,1,null],["[ (enter)",1,4,2,null],[">",2,18,2,null],["+2",2,20,2,null],[">",3,26,2,null],["+3",3,29,2,null],[">",4,22,2,null],["+3",4,25,2,null],[">",5,8,2,null],["+1",5,9,2,null],["<",4,25,2,null],["<",3,29,2,null],["<",2,20,2,null],["<",1,4,2,null],["-1",1,3,2,null],["] (loop)",1,3,2,null],[">",2,20,2,null],["+2",2,22,2,null],[">",3,29,2,null],["+3",3,32,2,null],[">",4,25,2,null],["+3",4,28,2,null],[">",5,9,2,null],["+1",5,10,2,null],["<",4,28,2,null],["<",3,32,2,null],["<",2,22,2,null],["<",1,3,2,null],["-1",1,2,2,null],["] (loop)",1,2,2,null],[">",2,22,2,null],["+2",2,24,2,null],[">",3,32,2,null],["+3",3,35,2,null],[">",4,28,2,null],["+3",4,31,2,null],[">",5,10,2,null],["+1",5,11,2,null],["<",4,31,2,null],["<",3,35,2,null],["<",2,24,2,null],["<",1,2,2,null],["-1",1,1,2,null],["] (loop)",1,1,2,null],[">",2,24,2,null],["+2",2,26,2,null],[">",3,35,2,null],["+3",3,38,2,null],[">",4,31,2,null],["+3",4,34,2,null],[">",5,11,2,null],["+1",5,12,2,null],["<",4,34,2,null],["<",3,38,2,null],["<",2,26,2,null],["<",1,1,2,null],["-1",1,0,2,null],["] (exit)",1,0,2,null],[">",2,26,1,null],["+1",2,27,1,null],[">",3,38,1,null],["+1",3,39,1,null],[">",4,34,1,null],["-1",4,33,1,null],[">",5,12,1,null],[">",6,2,1,null],["+1",6,3,1,null],["[ (enter)",6,3,2,null],["<",5,12,2,null],["] (loop)",5,12,2,null],["<",4,33,2,null],["] (loop)",4,33,2,null],["<",3,39,2,null],["] (loop)",3,39,2,null],["<",2,27,2,null],["] (loop)",2,27,2,null],["<",1,0,2,null],["] (exit)",1,0,2,null],["<",0,6,1,null],["-1",0,5,1,null],["] (loop)",0,5,1,null],[">",1,0,1,null],["+4",1,4,1,null],["[ (enter)",1,4,2,null],[">",2,27,2,null],["+2",2,29,2,null],[">",3,39,2,null],["+3",3,42,2,null],[">",4,33,2,null],["+3",4,36,2,null],[">",5,12,2,null],["+1",5,13,2,null],["<",4,36,2,null],["<",3,42,2,null],["<",2,29,2,null],["<",1,4,2,null],["-1",1,3,2,null],["] (loop)",1,3,2,null],[">",2,29,2,null],["+2",2,31,2,null],[">",3,42,2,null],["+3",3,45,2,null],[">",4,36,2,null],["+3",4,39,2,null],[">",5,13,2,null],["+1",5,14,2,null],["<",4,39,2,null],["<",3,45,2,null],["<",2,31,2,null],["<",1,3,2,null],["-1",1,2,2,null],["] (loop)",1,2,2,null],[">",2,31,2,null],["+2",2,33,2,null],[">",3,45,2,null],["+3",3,48,2,null],[">",4,39,2,null],["+3",4,42,2,null],[">",5,14,2,null],["+1",5,15,2,null],["<",4,42,2,null],["<",3,48,2,null],["<",2,33,2,null],["<",1,2,2,null],["-1",1,1,2,null],["] (loop)",1,1,2,null],[">",2,33,2,null],["+2",2,35,2,null],[">",3,48,2,null],["+3",3,51,2,null],[">",4,42,2,null],["+3",4,45,2,null],[">",5,15,2,null],["+1",5,16,2,null],["<",4,45,2,null],["<",3,51,2,null],["<",2,35,2,null],["<",1,1,2,null],["-1",1,0,2,null],["] (exit)",1,0,2,null],[">",2,35,1,null],["+1",2,36,1,null],[">",3,51,1,null],["+1",3,52,1,null],[">",4,45,1,null],["-1",4,44,1,null],[">",5,16,1,null],[">",6,3,1,null],["+1",6,4,1,null],["[ (enter)",6,4,2,null],["<",5,16,2,null],["] (loop)",5,16,2,null],["<",4,44,2,null],["] (loop)",4,44,2,null],["<",3,52,2,null],["] (loop)",3,52,2,null],["<",2,36,2,null],["] (loop)",2,36,2,null],["<",1,0,2,null],["] (exit)",1,0,2,null],["<",0,5,1,null],["-1",0,4,1,null],["] (loop)",0,4,1,null],[">",1,0,1,null],["+4",1,4,1,null],["[ (enter)",1,4,2,null],[">",2,36,2,null],["+2",2,38,2,null],[">",3,52,2,null],["+3",3,55,2,null],[">",4,44,2,null],["+3",4,47,2,null],[">",5,16,2,null],["+1",5,17,2,null],["<",4,47,2,null],["<",3,55,2,null],["<",2,38,2,null],["<",1,4,2,null],["-1",1,3,2,null],["] (loop)",1,3,2,null],[">",2,38,2,null],["+2",2,40,2,null],[">",3,55,2,null],["+3",3,58,2,null],[">",4,47,2,null],["+3",4,50,2,null],[">",5,17,2,null],["+1",5,18,2,null],["<",4,50,2,null],["<",3,58,2,null],["<",2,40,2,null],["<",1,3,2,null],["-1",1,2,2,null],["] (loop)",1,2,2,null],[">",2,40,2,null],["+2",2,42,2,null],[">",3,58,2,null],["+3",3,61,2,null],[">",4,50,2,null],["+3",4,53,2,null],[">",5,18,2,null],["+1",5,19,2,null],["<",4,53,2,null],["<",3,61,2,null],["<",2,42,2,null],["<",1,2,2,null],["-1",1,1,2,null],["] (loop)",1,1,2,null],[">",2,42,2,null],["+2",2,44,2,null],[">",3,61,2,null],["+3",3,64,2,null],[">",4,53,2,null],["+3",4,56,2,null],[">",5,19,2,null],["+1",5,20,2,null],["<",4,56,2,null],["<",3,64,2,null],["<",2,44,2,null],["<",1,1,2,null],["-1",1,0,2,null],["] (exit)",1,0,2,null],[">",2,44,1,null],["+1",2,45,1,null],[">",3,64,1,null],["+1",3,65,1,null],[">",4,56,1,null],["-1",4,55,1,null],[">",5,20,1,null],[">",6,4,1,null],["+1",6,5,1,null],["[ (enter)",6,5,2,null],["<",5,20,2,null],["] (loop)",5,20,2,null],["<",4,55,2,null],["] (loop)",4,55,2,null],["<",3,65,2,null],["] (loop)",3,65,2,null],["<",2,45,2,null],["] (loop)",2,45,2,null],["<",1,0,2,null],["] (exit)",1,0,2,null],["<",0,4,1,null],["-1",0,3,1,null],["] (loop)",0,3,1,null],[">",1,0,1,null],["+4",1,4,1,null],["[ (enter)",1,4,2,null],[">",2,45,2,null],["+2",2,47,2,null],[">",3,65,2,null],["+3",3,68,2,null],[">",4,55,2,null],["+3",4,58,2,null],[">",5,20,2,null],["+1",5,21,2,null],["<",4,58,2,null],["<",3,68,2,null],["<",2,47,2,null],["<",1,4,2,null],["-1",1,3,2,null],["] (loop)",1,3,2,null],[">",2,47,2,null],["+2",2,49,2,null],[">",3,68,2,null],["+3",3,71,2,null],[">",4,58,2,null],["+3",4,61,2,null],[">",5,21,2,null],["+1",5,22,2,null],["<",4,61,2,null],["<",3,71,2,null],["<",2,49,2,null],["<",1,3,2,null],["-1",1,2,2,null],["] (loop)",1,2,2,null],[">",2,49,2,null],["+2",2,51,2,null],[">",3,71,2,null],["+3",3,74,2,null],[">",4,61,2,null],["+3",4,64,2,null],[">",5,22,2,null],["+1",5,23,2,null],["<",4,64,2,null],["<",3,74,2,null],["<",2,51,2,null],["<",1,2,2,null],["-1",1,1,2,null],["] (loop)",1,1,2,null],[">",2,51,2,null],["+2",2,53,2,null],[">",3,74,2,null],["+3",3,77,2,null],[">",4,64,2,null],["+3",4,67,2,null],[">",5,23,2,null],["+1",5,24,2,null],["<",4,67,2,null],["<",3,77,2,null],["<",2,53,2,null],["<",1,1,2,null],["-1",1,0,2,null],["] (exit)",1,0,2,null],[">",2,53,1,null],["+1",2,54,1,null],[">",3,77,1,null],["+1",3,78,1,null],[">",4,67,1,null],["-1",4,66,1,null],[">",5,24,1,null],[">",6,5,1,null],["+1",6,6,1,null],["[ (enter)",6,6,2,null],["<",5,24,2,null],["] (loop)",5,24,2,null],["<",4,66,2,null],["] (loop)",4,66,2,null],["<",3,78,2,null],["] (loop)",3,78,2,null],["<",2,54,2,null],["] (loop)",2,54,2,null],["<",1,0,2,null],["] (exit)",1,0,2,null],["<",0,3,1,null],["-1",0,2,1,null],["] (loop)",0,2,1,null],[">",1,0,1,null],["+4",1,4,1,null],["[ (enter)",1,4,2,null],[">",2,54,2,null],["+2",2,56,2,null],[">",3,78,2,null],["+3",3,81,2,null],[">",4,66,2,null],["+3",4,69,2,null],[">",5,24,2,null],["+1",5,25,2,null],["<",4,69,2,null],["<",3,81,2,null],["<",2,56,2,null],["<",1,4,2,null],["-1",1,3,2,null],["] (loop)",1,3,2,null],[">",2,56,2,null],["+2",2,58,2,null],[">",3,81,2,null],["+3",3,84,2,null],[">",4,69,2,null],["+3",4,72,2,null],[">",5,25,2,null],["+1",5,26,2,null],["<",4,72,2,null],["<",3,84,2,null],["<",2,58,2,null],["<",1,3,2,null],["-1",1,2,2,null],["] (loop)",1,2,2,null],[">",2,58,2,null],["+2",2,60,2,null],[">",3,84,2,null],["+3",3,87,2,null],[">",4,72,2,null],["+3",4,75,2,null],[">",5,26,2,null],["+1",5,27,2,null],["<",4,75,2,null],["<",3,87,2,null],["<",2,60,2,null],["<",1,2,2,null],["-1",1,1,2,null],["] (loop)",1,1,2,null],[">",2,60,2,null],["+2",2,62,2,null],[">",3,87,2,null],["+3",3,90,2,null],[">",4,75,2,null],["+3",4,78,2,null],[">",5,27,2,null],["+1",5,28,2,null],["<",4,78,2,null],["<",3,90,2,null],["<",2,62,2,null],["<",1,1,2,null],["-1",1,0,2,null],["] (exit)",1,0,2,null],[">",2,62,1,null],["+1",2,63,1,null],[">",3,90,1,null],["+1",3,91,1,null],[">",4,78,1,null],["-1",4,77,1,null],[">",5,28,1,null],[">",6,6,1,null],["+1",6,7,1,null],["[ (enter)",6,7,2,null],["<",5,28,2,null],["] (loop)",5,28,2,null],["<",4,77,2,null],["] (loop)",4,77,2,null],["<",3,91,2,null],["] (loop)",3,91,2,null],["<",2,63,2,null],["] (loop)",2,63,2,null],["<",1,0,2,null],["] (exit)",1,0,2,null],["<",0,2,1,null],["-1",0,1,1,null],["] (loop)",0,1,1,null],[">",1,0,1,null],["+4",1,4,1,null],["[ (enter)",1,4,2,null],[">",2,63,2,null],["+2",2,65,2,null],[">",3,91,2,null],["+3",3,94,2,null],[">",4,77,2,null],["+3",4,80,2,null],[">",5,28,2,null],["+1",5,29,2,null],["<",4,80,2,null],["<",3,94,2,null],["<",2,65,2,null],["<",1,4,2,null],["-1",1,3,2,null],["] (loop)",1,3,2,null],[">",2,65,2,null],["+2",2,67,2,null],[">",3,94,2,null],["+3",3,97,2,null],[">",4,80,2,null],["+3",4,83,2,null],[">",5,29,2,null],["+1",5,30,2,null],["<",4,83,2,null],["<",3,97,2,null],["<",2,67,2,null],["<",1,3,2,null],["-1",1,2,2,null],["] (loop)",1,2,2,null],[">",2,67,2,null],["+2",2,69,2,null],[">",3,97,2,null],["+3",3,100,2,null],[">",4,83,2,null],["+3",4,86,2,null],[">",5,30,2,null],["+1",5,31,2,null],["<",4,86,2,null],["<",3,100,2,null],["<",2,69,2,null],["<",1,2,2,null],["-1",1,1,2,null],["] (loop)",1,1,2,null],[">",2,69,2,null],["+2",2,71,2,null],[">",3,100,2,null],["+3",3,103,2,null],[">",4,86,2,null],["+3",4,89,2,null],[">",5,31,2,null],["+1",5,32,2,null],["<",4,89,2,null],["<",3,103,2,null],["<",2,71,2,null],["<",1,1,2,null],["-1",1,0,2,null],["] (exit)",1,0,2,null],[">",2,71,1,null],["+1",2,72,1,null],[">",3,103,1,null],["+1",3,104,1,null],[">",4,89,1,null],["-1",4,88,1,null],[">",5,32,1,null],[">",6,7,1,null],["+1",6,8,1,null],["[ (enter)",6,8,2,null],["<",5,32,2,null],["] (loop)",5,32,2,null],["<",4,88,2,null],["] (loop)",4,88,2,null],["<",3,104,2,null],["] (loop)",3,104,2,null],["<",2,72,2,null],["] (loop)",2,72,2,null],["<",1,0,2,null],["] (exit)",1,0,2,null],["<",0,1,1,null],["-1",0,0,1,null],["] (exit)",0,0,1,null],[">",1,0,0,null],[">",2,72,0,null],[".",2,72,0,"H"],[">",3,104,0,null],["-3",3,101,0,null],[".",3,101,0,"e"],["+7",3,108,0,null],[".",3,108,0,"l"],[".",3,108,0,"l"],["+3",3,111,0,null],[".",3,111,0,"o"],[">",4,88,0,null],[">",5,32,0,null],[".",5,32,0," "],["<",4,88,0,null],["-1",4,87,0,null],[".",4,87,0,"W"],["<",3,111,0,null],[".",3,111,0,"o"],["+3",3,114,0,null],[".",3,114,0,"r"],["-6",3,108,0,null],[".",3,108,0,"l"],["-8",3,100,0,null],[".",3,100,0,"d"],[">",4,87,0,null],[">",5,32,0,null],["+1",5,33,0,null],[".",5,33,0,"!"],[">",6,8,0,null],["+2",6,10,0,null],[".",6,10,0,"\n"]]};
+const SOURCE = "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.";
+const PHASE2_START = 658;
+
+const COL_LABELS = [
+  ["0","outer ctr"],
+  ["1","inner ctr"],
+  ["2","'H'"],
+  ["3","e·l·o·r"],
+  ["4","'W'"],
+  ["5","sp / '!'"],
+  ["6","'\\n'"],
+];
+
+const RAMP_LIGHT = ["#cde2fb","#b7d3f6","#9ec5f4","#86b6ef","#6da7ec","#5598e7","#3987e5","#2a78d6","#256abf","#1c5cab","#184f95","#104281","#0d366b"];
+const RAMP_DARK  = ["#cde2fb","#b7d3f6","#9ec5f4","#86b6ef","#6da7ec","#5598e7","#3987e5","#2a78d6","#256abf","#1c5cab","#184f95"];
+
+function isDark() {
+  const root = document.documentElement;
+  if (root.getAttribute('data-theme') === 'dark') return true;
+  if (root.getAttribute('data-theme') === 'light') return false;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+function hexToRgb(h) {
+  const n = parseInt(h.slice(1), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+function lerp(a, b, t) { return a + (b - a) * t; }
+
+function colorForValue(v, maxV, dark) {
+  const ramp = dark ? RAMP_DARK : RAMP_LIGHT;
+  const t = Math.max(0, Math.min(1, v / maxV));
+  const pos = t * (ramp.length - 1);
+  const i0 = Math.floor(pos);
+  const i1 = Math.min(ramp.length - 1, i0 + 1);
+  const f = pos - i0;
+  const c0 = hexToRgb(ramp[i0]), c1 = hexToRgb(ramp[i1]);
+  const r = Math.round(lerp(c0[0], c1[0], f));
+  const g = Math.round(lerp(c0[1], c1[1], f));
+  const b = Math.round(lerp(c0[2], c1[2], f));
+  return [r, g, b];
+}
+function rgbToCss([r,g,b], a) { return a === undefined ? `rgb(${r},${g},${b})` : `rgba(${r},${g},${b},${a})`; }
+
+// ---- source snippet: bold phase 1 vs phase 2 ----
+const srcSplit = SOURCE.indexOf(">>.");
+document.getElementById('source').innerHTML =
+  '<b>' + SOURCE.slice(0, srcSplit) + '</b>' + SOURCE.slice(srcSplit);
+
+// ---- column headers ----
+const COL_W = 62, ROW_H = 2, STRIPE_W = 14, N_CELLS = DATA.n_cells, N_STEPS = DATA.steps.length;
+const headerHtml = COL_LABELS.map(([n, r]) =>
+  `<div style="width:${COL_W}px"><b>${n}</b>${r}</div>`).join('');
+document.getElementById('colHeaders').innerHTML = headerHtml;
+
+// ---- precompute per-row snapshots (carry-forward matrix) + max value ----
+let maxVal = 1;
+const cur = new Array(N_CELLS).fill(0);
+const rows = DATA.steps.map(([op, cell, value, depth, output], i) => {
+  cur[cell] = value;
+  if (value > maxVal) maxVal = value;
+  return { i, op, cell, value, depth, output, snapshot: cur.slice() };
+});
+
+// ---- draw main heatmap + stripe ----
+const heatCanvas = document.getElementById('heat');
+const stripeCanvas = document.getElementById('stripe');
+const overlayCanvas = document.getElementById('overlay');
+const dpr = window.devicePixelRatio || 1;
+
+function sizeCanvas(cv, w, h) {
+  cv.style.width = w + 'px';
+  cv.style.height = h + 'px';
+  cv.width = Math.round(w * dpr);
+  cv.height = Math.round(h * dpr);
+  const ctx = cv.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  return ctx;
+}
+
+function render() {
+  const dark = isDark();
+  const w = N_CELLS * COL_W, h = N_STEPS * ROW_H;
+  const hctx = sizeCanvas(heatCanvas, w, h);
+  const sctx = sizeCanvas(stripeCanvas, STRIPE_W, h);
+  sizeCanvas(overlayCanvas, w, h);
+
+  const depthColors = dark
+    ? { 0: [56,56,53], 1: [168,98,58], 2: [217,89,38] }
+    : { 0: [195,194,183], 1: [246,193,160], 2: [235,104,52] };
+
+  for (const row of rows) {
+    const y = row.i * ROW_H;
+    for (let c = 0; c < N_CELLS; c++) {
+      hctx.fillStyle = rgbToCss(colorForValue(row.snapshot[c], maxVal, dark));
+      hctx.fillRect(c * COL_W, y, COL_W, ROW_H);
+    }
+    sctx.fillStyle = rgbToCss(depthColors[row.depth]);
+    sctx.fillRect(0, y, STRIPE_W, ROW_H);
+  }
+
+  // phase divider
+  const dividerY = PHASE2_START * ROW_H;
+  hctx.strokeStyle = dark ? '#ffffff' : '#0b0b0b';
+  hctx.globalAlpha = 0.55;
+  hctx.lineWidth = 1;
+  hctx.beginPath();
+  hctx.moveTo(0, dividerY);
+  hctx.lineTo(w, dividerY);
+  hctx.stroke();
+  hctx.globalAlpha = 1;
+}
+render();
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+// phase label
+const wrap = heatCanvas.parentElement;
+const lbl = document.createElement('div');
+lbl.className = 'phase-label';
+lbl.style.top = (PHASE2_START * ROW_H) + 'px';
+lbl.textContent = 'phase 2 → print';
+wrap.style.position = 'relative';
+wrap.appendChild(lbl);
+
+// ---- hover ----
+const tooltip = document.getElementById('tooltip');
+const octx = overlayCanvas.getContext('2d');
+
+function handleMove(e) {
+  const rect = heatCanvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  const rowI = Math.max(0, Math.min(N_STEPS - 1, Math.floor(y / ROW_H)));
+  const colI = Math.floor(x / COL_W);
+  const row = rows[rowI];
+  if (!row) return;
+
+  octx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+  octx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const dark = isDark();
+  octx.strokeStyle = dark ? 'rgba(255,255,255,0.55)' : 'rgba(11,11,11,0.55)';
+  octx.lineWidth = 1;
+  octx.strokeRect(0.5, row.i * ROW_H - 0.5, N_CELLS * COL_W - 1, ROW_H + 1);
+  if (colI >= 0 && colI < N_CELLS) {
+    octx.strokeRect(colI * COL_W + 0.5, Math.max(0, row.i * ROW_H - 40), COL_W - 1, 80);
+  }
+
+  const cellVal = (colI >= 0 && colI < N_CELLS) ? row.snapshot[colI] : row.value;
+  const cellLabel = (colI >= 0 && colI < N_CELLS) ? colI : row.cell;
+  tooltip.innerHTML =
+    `<b>step ${row.i}</b> · op <b>${row.op}</b><br>` +
+    `cell ${cellLabel}: <b>${cellVal}</b> &nbsp; loop depth: <b>${row.depth}</b>` +
+    (row.output ? `<br>output: <b>${row.output === '\n' ? '\\n' : row.output}</b>` : '');
+  tooltip.style.opacity = '1';
+  tooltip.style.left = (e.clientX + 14) + 'px';
+  tooltip.style.top = (e.clientY + 14) + 'px';
+}
+heatCanvas.addEventListener('mousemove', handleMove);
+heatCanvas.addEventListener('mouseleave', () => {
+  tooltip.style.opacity = '0';
+  octx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+});
+
+// ---- phase 2 detail table ----
+const detailRows = rows.slice(PHASE2_START);
+const thead = '<thead><tr><th>step</th><th>op</th><th>cell</th><th>value</th><th>depth</th><th>output</th></tr></thead>';
+const tbody = '<tbody>' + detailRows.map(r => {
+  const dark = isDark();
+  const [cr,cg,cb] = colorForValue(r.value, maxVal, dark);
+  const swatchFg = (cr*0.299 + cg*0.587 + cb*0.114) > 150 ? '#0b0b0b' : '#fcfcfb';
+  const depthBg = ({0:'var(--depth0)',1:'var(--depth1)',2:'var(--depth2)'})[r.depth];
+  return `<tr>
+    <td>${r.i}</td>
+    <td class="op-cell">${r.op}</td>
+    <td>${r.cell}</td>
+    <td><span class="val-swatch" style="background:rgb(${cr},${cg},${cb});color:${swatchFg}">${r.value}</span></td>
+    <td><span class="depth-pill" style="background:${depthBg}">${r.depth}</span></td>
+    <td>${r.output ? `<span class="out-char">${r.output === '\n' ? '\\n' : r.output}</span>` : '<span class="dim">—</span>'}</td>
+  </tr>`;
+}).join('') + '</tbody>';
+document.getElementById('detailTable').innerHTML = thead + tbody;
+</script>
