@@ -3,7 +3,7 @@ name = "brainfucklife"
 version = "0.1.0"
 description = "A Brainfuck interpreter, and BFF - the self-modifying variant in which self-replicating programs emerge from a soup of noise."
 readme = "README.md"
-# Matches BlenderMathAnim, the other public repo of this workspace.
+
 license = { text = "GPL-3.0-or-later" }
 authors = [{ name = "NumberCruncher", email = "physik.martin@gmail.com" }]
 # The interpreter itself needs nothing but the standard library; the pin comes
