@@ -24,6 +24,9 @@ Programs that use `,` (read input) pull from stdin.
   et al. 2024 (arXiv:2406.19108), plus the primordial-soup experiment in
   which self-replicating programs emerge from random noise. See
   `bff/README.md`.
+- `bff/live.py` — opens a realtime Matplotlib dashboard that functionally
+  verifies candidate replicators, tracks their marker-carrier prevalence,
+  and retains exact-tape, entropy, and execution diagnostics.
 - `viz/hello_trace.html` — a standalone, open-in-any-browser visualization
   of `examples/hello.bf`'s run: a heatmap with cells across and time down
   the page, a loop-depth stripe on the left, and a zoomed detail table for

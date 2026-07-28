@@ -6,6 +6,10 @@ Agüera y Arcas, Alakuijala, Evans, Laurie, Mordvintsev, Niklasson, Randazzo,
 Versari — [arXiv:2406.19108](https://arxiv.org/abs/2406.19108). The paper
 itself is not redistributed here; get it from arXiv.
 
+See [`docs/Background.md`](../docs/Background.md) for the research context,
+claim boundaries, later functional detector, visualization methodology, and
+primary references.
+
 ## The language
 
 BFF ("Brainfuck Family") makes Brainfuck **embodied**: there is no separate
@@ -87,21 +91,68 @@ still varied).
 - `soup.py` — the experiment driver: builds `soup.c` on first use, runs
   epochs, measures complexity, and tests the dominant tapes for actual
   self-replication.
+- `live.py` — a realtime Matplotlib view that functionally verifies candidate
+  replicators, tracks the prevalence and growth of their replicated markers,
+  and retains exact-tape, entropy, and execution diagnostics.
+- `replication.py` — bounded repeated-marker discovery, the multigeneration
+  CuBFF replication assay, held-out confirmation, and marker-carrier tracking.
 
 ## Usage
 
 ```sh
-python3 bff.py --selfrep          # run the paper's replicator against a blank tape
+python3 bff.py --self-rep         # run the paper's replicator against a blank tape
 python3 soup.py                   # 1024 tapes, run until the transition
 python3 soup.py --n 4096 --seed 3 --csv run.csv
 python3 soup.py --no-mutation     # self-modification only, no background noise
 python3 takeover.py --seed 4      # seeded takeover test, with a random control
+python3 live.py --n 4096 --seed 4 # realtime verified-replication visualization
 ```
+
+The live viewer runs the soup on one worker thread and keeps Matplotlib on the
+main thread. It samples by wall clock (`--refresh 0.5` by default), so slow GUI
+redraws can drop stale frames without changing the simulation. Use `--top` to
+change the number of displayed rows, `--stop-at 1` to stop at the transition,
+or the window's **Pause**, **Stop**, and **Show exact/verified** controls.
+
+The default view separates two questions that exact-tape frequency conflates:
+
+1. **Does a representative replicate functionally?** Every 0.25 seconds, the
+   viewer searches a deterministic sample of at most 8192 tapes for 16-byte
+   markers present in at least two distinct carrier tapes. A bounded number of
+   representatives then undergo the current CuBFF assay: 13 noise contexts,
+   five consecutive generations per context, and positional agreement in at
+   least four contexts. A candidate must score at least 48/64 in both that
+   assay and a second, disjoint noise batch. Its tracking marker must also
+   appear in both output halves through all five generations in at least four
+   contexts in both batches.
+2. **Is the verified signature spreading?** Once a representative passes, the
+   line chart counts every full-soup tape containing its replicated marker and
+   shows carrier share, peak share, and interval growth. This is a
+   presence-only population proxy: carriers are not individually assayed,
+   nested active signatures are collapsed, remaining marker tracks may still
+   overlap, their shares must not be summed, and the chart does not prove
+   ancestry or that the marker alone is an autonomous core.
+
+This combines the detector in the current
+[CuBFF `common_language.h`](https://github.com/paradigms-of-intelligence/cubff/blob/main/common_language.h)
+with the conservative score threshold introduced in
+["BFF: Simple explanations for complex phenomena"](https://arxiv.org/abs/2607.01483).
+Candidate discovery and verification are read-only and do not consume the
+soup RNG, so enabling the display does not change a seeded trajectory.
+
+Detector sampling is independent of the slower GUI refresh. Each published
+snapshot carries a bounded high-resolution history, so dropped render frames
+do not erase a rapid rise. Use `--verify-every 0.1` for finer sampling,
+`--replication-threshold 64` for exact positional agreement in both assay
+batches, or `--no-verify` to disable the detector and start in the exact-tape
+view. Replicator signatures can shift within their 64-byte windows or mutate
+inert bytes, so the exact view remains a diagnostic rather than the functional
+classification.
 
 For the notebook, use the workspace venv:
 
 ```sh
-cd bff && ../../.venv/bin/python -m jupyter lab BFF_walkthrough.ipynb
+cd bff && ../.venv/bin/python -m jupyter lab BFF_walkthrough.ipynb
 ```
 
 `jupyterlab`, `ipykernel`, `ipywidgets` and `brotli` are declared in the
@@ -109,7 +160,7 @@ workspace `pyproject.toml` and pinned in `uv.lock`, so `uv sync` keeps them.
 If the venv is ever rebuilt from scratch:
 
 ```sh
-uv sync
+uv sync --extra complexity --extra notebook
 ```
 
 `soup.py` cross-checks the C core against `bff.py` on 200 random tapes at
@@ -129,7 +180,7 @@ Running it against a tape of zeros reproduces the paper's figure exactly —
 slot A is left unchanged and slot B comes out a perfect copy:
 
 ```
-$ python3 bff.py --selfrep
+$ python3 bff.py --self-rep
 A  in : |[[{.>]-]                                                ]-]>.{[[|
 B  in : |0000000000000000000000000000000000000000000000000000000000000000|
 A' out: |[[{.>]-]                                                ]-]>.{[[|
