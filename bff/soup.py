@@ -91,8 +91,8 @@ def high_order_entropy(buf: bytes) -> float:
 class Soup:
     def __init__(self, n_programs=1024, seed=1, mutation_prob=1 / 4096,
                  stepcount=DEFAULT_STEPS):
-        if n_programs & (n_programs - 1):
-            raise ValueError("n_programs should be a power of two")
+        if n_programs < 2 or n_programs & (n_programs - 1):
+            raise ValueError("n_programs should be a power of two greater than one")
         self.lib = _load_lib()
         self.n = n_programs
         self.stepcount = stepcount
@@ -169,6 +169,9 @@ def test_selfrep(prog: bytes, lib, trials=16, stepcount=DEFAULT_STEPS):
                         complete copy, and anything above ~8 is far beyond
                         what random tapes share.
     """
+    if len(prog) != TAPE:
+        raise ValueError(f"prog must be exactly {TAPE} bytes")
+
     rng = np.random.default_rng(12345)
     exact = 0
     runs = []
@@ -201,8 +204,11 @@ def dominant_kmer(tapes: np.ndarray, k=16, top=3):
 
 def cross_check(lib) -> None:
     """Verify the C core agrees with the readable bff.py on random tapes."""
-    sys.path.insert(0, str(HERE))
-    import bff
+    if __package__:
+        from . import bff
+    else:
+        sys.path.insert(0, str(HERE))
+        import bff
 
     rng = np.random.default_rng(0)
     for _ in range(200):
