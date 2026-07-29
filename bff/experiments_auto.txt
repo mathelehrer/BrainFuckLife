@@ -29980,3 +29980,3176 @@ most common 16-byte substrings (the replicating core):
   x150   |                |
   x111   |                |
 
+./soup.py --n 4096 --seed 1579 --epochs 100000
+
+ 100000      0.1067      225.1         1   322.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   <  [       ]     ]  ]  ] ]     ]   ] ]           -     <    .|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |           < <                                  ,               |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <          .                                                ,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x160   |[[[[[[[[[[[[[[[[|
+  x138   |                |
+  x96    |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1578 --epochs 100000
+
+ 100000      0.1062      263.1         1   350.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  < <<    -<<            <   >              +,,            , <> |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      <                                                  [      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |               <                       <              <<  <<    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x149   |>>>>>>>>>>>>>>>>|
+  x141   |<<<<<<<<<<<<<<<<|
+  x114   |                |
+
+./soup.py --n 4096 --seed 1580 --epochs 100000
+
+ 100000      0.1184      277.1         1   310.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |             -  >         > >  >>  < <   < >>     0  <        - |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<<<        >{ >                ,                  <<,   <<<<<<<<|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <        .           ,                , ,      < <<  <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x125   |,,,,,,,,,,,,,,,,|
+  x100   |                |
+  x89    |                |
+
+./soup.py --n 4096 --seed 1581 --epochs 100000
+
+ 100000      0.1668      268.3         1   317.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                                               < < <      <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | , ,                                        ,            <<<    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |,                                         <    <                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x183   |                |
+  x153   |[[[[[[[[[[[[[[[[|
+  x143   |                |
+
+./soup.py --n 4096 --seed 1583 --epochs 100000
+
+ 100000      0.1134      227.1         1   308.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  < ,   <  {    ,  {-.}  <  } <}}<}}   }        <               |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |+, ,, > ,  +   <   <     }             { ,   <             <<  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <<             <<              <  <   <  <<<        > }  <  }|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x142   |<<<<<<<<<<<<<<<<|
+  x132   |,,,,,,,,,,,,,,,,|
+  x86    |                |
+
+./soup.py --n 4096 --seed 1587 --epochs 100000
+
+  61700      1.8974      607.5         1   210.5s
+
+*** state transition: complexity crossed 1.0 at epoch 61700 ***
+
+most common whole tapes:
+  x1     |  .     [ [  ,<}  ]     ] ]     ]  }<,  [ [   0 0  0 0 0 0   [0 |
+         exact self-copy 0% of trials, median 39/64 bytes copied into the food tape
+  x1     |    [ [  ,[0  <}  ]     ] ]     ]  }<,  [ [ 0   [0  0   0      <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                              ] 0  00 0   < <<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x1965  |    ] ]     ]  }|
+  x1960  |   ] ]     ]  }<|
+  x1948  |  ] ]     ]  }<,|
+
+./soup.py --n 4096 --seed 1582 --epochs 100000
+
+ 100000      0.1443      223.0         1   345.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  <,  ,                             ,         << <   <<         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |        >                <                > <        .    <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                . ,         }    , +      {<    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x145   |<<<<<<<<<<<<<<<<|
+  x94    |                |
+  x88    |                |
+
+./soup.py --n 4096 --seed 1584 --epochs 100000
+
+ 100000      0.1521      294.1         1   340.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |..><         ,       <       <                                  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  . >   ><< <> <<        +                    >   <,            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <    <                          <<<    >>,                ,  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x256   |                |
+  x170   |                |
+  x160   |                |
+
+./soup.py --n 4096 --seed 1585 --epochs 100000
+
+ 100000      0.1086      228.3         1   318.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                 - ,+           <     >     ,  <     ,          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |,     , ,,,,,,,,  ,,,,,,, ,,,,,, ,,,,,,,,,,,,,,,,          ,    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      <>,   <                        , <<     <<   < <,  ,      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x155   |<<<<<<<<<<<<<<<<|
+  x106   |                |
+  x89    |                |
+
+./soup.py --n 4096 --seed 1593 --epochs 100000
+
+  21100      1.3210      583.1         1    63.4s
+
+*** state transition: complexity crossed 1.0 at epoch 21100 ***
+
+most common whole tapes:
+  x1     |[00 0  ,]   0 {  <  < >> <      [<       <<< <<                 |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       0 << 0 {,    < >>]>> <    ,{   [[[[[000  <<< 0 ,  0 0  0 |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |0  0 00000 [[   {,    < >>]>> <    ,{   [0[ [  [0[000<<<.   0 00|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x1224  | < >>]>> <    ,{|
+  x1214  |< >>]>> <    ,{ |
+  x1200  |    < >>]>> <   |
+
+./soup.py --n 4096 --seed 1586 --epochs 100000
+
+ 100000      0.1506      264.8         1   312.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |0       [ [  [ [  [  .[  [   [ <   [[[[  [   <<           >     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | } } }[[[}}} }}}} }}} } } }}}} [   < < }      <}}}}}}}}}<   < < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <          <                             {         <{,      {|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x428   |<<<<<<<<<<<<<<<<|
+  x147   |[[[[[[[[[[[[[[[[|
+  x108   |                |
+
+./soup.py --n 4096 --seed 1589 --epochs 100000
+
+ 100000      0.1443      303.6         1   305.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |            }  <     < > <.  }} {                >  <           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                            }   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  < <>                <{                 < <             , , , ,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x153   |<<<<<<<<<<<<<<<<|
+  x113   |                |
+  x88    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1588 --epochs 100000
+
+ 100000      0.1272      238.9         1   310.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                  <                              < <    >      <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |00                                                    [         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |, ,          <     >     ,      .            <         {        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x177   |,,,,,,,,,,,,,,,,|
+  x171   |<<<<<<<<<<<<<<<<|
+  x124   |                |
+
+./soup.py --n 4096 --seed 1590 --epochs 100000
+
+ 100000      0.1480      239.7         1   310.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<     ,>     ,                                         <<<< <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | < < 0    <        > ,             >,    .  .       ,           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <   << <         <  >                   >                    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x176   |<<<<<<<<<<<<<<<<|
+  x142   |                |
+  x137   |                |
+
+./soup.py --n 4096 --seed 1591 --epochs 100000
+
+ 100000      0.1835      238.3         1   360.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |         . .  .                                               , |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       ,                               <      , ,    ,  <>      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  >  >        ,                      +    >   >  <     <     . {|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x246   |[[[[[[[[[[[[[[[[|
+  x125   |<<<<<<<<<<<<<<<<|
+  x115   |                |
+
+./soup.py --n 4096 --seed 1592 --epochs 100000
+
+ 100000      0.1033      288.3         1   299.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   0        <                         ,                         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      <            <                           ,<         ,,    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x164   |                |
+  x99    |<<<<<<<<<<<<<<<<|
+  x98    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1600 --epochs 100000
+
+  49300      2.4492      418.2        29   145.8s
+
+*** state transition: complexity crossed 1.0 at epoch 49300 ***
+
+most common whole tapes:
+  x29    |[[<  ,>    <  } ]+           + ] +           +] }  <    >,  <[[ |
+         exact self-copy 0% of trials, median 35/64 bytes copied into the food tape
+  x28    | [[<  ,>    <  } ]+           + ] +           +] }  <    >,  <[[|
+         exact self-copy 0% of trials, median 35/64 bytes copied into the food tape
+  x22    | [[<  ,>    <  } ]+           + ] +           +] }  <    >,  <[[|
+         exact self-copy 0% of trials, median 37/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x675   |[[[[[[[[[[[[[[[[|
+  x416   |[[<  ,>    <  } |
+  x253   | [[<  ,>    <  }|
+
+./soup.py --n 4096 --seed 1594 --epochs 100000
+
+ 100000      0.1027      206.1         1   302.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |           <                       <      > >,            ,     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                      < .    < <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x168   |<<<<<<<<<<<<<<<<|
+  x89    |                |
+  x80    |                |
+
+./soup.py --n 4096 --seed 1595 --epochs 100000
+
+ 100000      0.1416      219.8         1   315.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |.                                                {         <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                             <       [                     <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    < <    ,, , +   <  <        , +       {  <         << <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x169   |                |
+  x147   |                |
+  x104   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1597 --epochs 100000
+
+ 100000      0.1612      228.5         1   302.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                  ,                  }                  <,<     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |        <<<      +      <                      <     < <  +     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                    ,                  ,   << ,> <        < <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x163   |                |
+  x146   |<<<<<<<<<<<<<<<<|
+  x121   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1596 --epochs 100000
+
+ 100000      0.1242      250.1         1   334.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    ,                                       <   <<    , <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                   ,  - - , +<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<  << < << <<,<<, , << <<<   < , ,   << <                       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x114   |                |
+  x102   |                |
+  x98    |                |
+
+./soup.py --n 4096 --seed 1598 --epochs 100000
+
+ 100000      0.3148      227.5         3   357.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x3     |                                                                |
+         exact self-copy 0% of trials, median 0/64 bytes copied into the food tape
+  x1     |      ,          }    . >                                       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |]       ,,,,,,, ,,,,,,,,,, ,  ,,  ,, , ,,,,,,,,,, <  <<<< {     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x1661  |                |
+  x1021  |                |
+  x236   |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1599 --epochs 100000
+
+ 100000      0.1047      260.7         1   282.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |          .  <         }       } > }     <        ,    <      > |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  . {<{   <     }.      <      >             <,,                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    { {{{{{{{{{{{{{{{{{{{ {{{{{{{{{{{{{{{{{{{{ {{{ {  {{ {  <>  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x133   |,,,,,,,,,,,,,,,,|
+  x106   |                |
+  x83    |                |
+
+./soup.py --n 4096 --seed 1603 --epochs 100000
+
+  54700      2.4766      666.7        41   181.1s
+
+*** state transition: complexity crossed 1.0 at epoch 54700 ***
+
+most common whole tapes:
+  x41    |[  >{ <   .  ,   >]]> >    >>    > >]]>   ,  .   < {>  [        |
+         exact self-copy 0% of trials, median 38/64 bytes copied into the food tape
+  x40    |        [  >{ <   .  ,   >]]> >    >>    > >]]>   ,  .   < {>  [|
+         exact self-copy 0% of trials, median 38/64 bytes copied into the food tape
+  x38    |[  >{ <   .  ,   >]]> >    >>    > >]]>   ,  .   < {>  [        |
+         exact self-copy 0% of trials, median 44/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x517   |[[[[[[[[[[[[[[[[|
+  x509   | >    >>    > >]|
+  x508   |]> >    >>    > |
+
+./soup.py --n 4096 --seed 1601 --epochs 100000
+
+ 100000      0.1142      260.8         1   305.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   ++    [                   .         } <                 <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |0 ,      [+  [+[+ +[   [+[+ +[+ +   -       ]     -            <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                       ,,,,,  ,  ,          <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x168   |                |
+  x160   |<<<<<<<<<<<<<<<<|
+  x126   |                |
+
+./soup.py --n 4096 --seed 1602 --epochs 100000
+
+ 100000      0.0889      235.8         1   298.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | [    ]                            >    >       <         <<    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     <                                                       ,< |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x101   |<<<<<<<<<<<<<<<<|
+  x84    |0000000000000000|
+  x79    |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1605 --epochs 100000
+
+ 100000      0.2108      313.5         1   317.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | <                   ,                     <    +     ,,,       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <                 .                           ,  <     , <<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     <  ,,[      ..                           ,, .     < < <<< <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x273   |<<<<<<<<<<<<<<<<|
+  x248   |,,,,,,,,,,,,,,,,|
+  x185   |                |
+
+./soup.py --n 4096 --seed 1607 --epochs 100000
+
+ 100000      0.1167      268.4         1   288.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                    [          ]    <                 <         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<< >,,>   <                                   <    < <     <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | < , ,                          <                      <   <  , |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x310   |                |
+  x116   |                |
+  x109   |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1604 --epochs 100000
+
+ 100000      0.1268      314.6         1   347.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<<  <    {,    <<   ,     .                  }>  +     }}}   }} |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                              >,,       ,      <                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |        <<                                                 <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x145   |>>>>>>>>>>>>>>>>|
+  x121   |[[[[[[[[[[[[[[[[|
+  x98    |                |
+
+./soup.py --n 4096 --seed 1608 --epochs 100000
+
+ 100000      0.1042      261.8         1   300.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | >    -     +                                          <, ,     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<      <             <                       ,,      <          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |           0      <    0}   [      0]      0     [ [[        .  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x97    |[[[[[[[[[[[[[[[[|
+  x81    |                |
+  x70    |                |
+
+./soup.py --n 4096 --seed 1606 --epochs 100000
+
+ 100000      0.1166      284.0         1   334.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                            ,                       < <,,, ,<   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<<<          [< [  [  [  [        [     [  [  [  [  [           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   .[+,[ -[ -[ ,[ ,[ ,[ ,  ,[ ,[  [ ,[ ,[ ,  ,[ ,    <          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x236   |,,,,,,,,,,,,,,,,|
+  x105   |++++++++++++++++|
+  x98    |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1609 --epochs 100000
+
+ 100000      0.1087      218.2         1   293.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                 >       <     {   ,                   <<   }   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       <                                     <          ,,<  <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <  <     <     < <   <   <<<      ,                            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x95    |,,,,,,,,,,,,,,,,|
+  x82    |                |
+  x68    |                |
+
+./soup.py --n 4096 --seed 1611 --epochs 100000
+
+ 100000      0.1213      248.7         1   306.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  ,        + ., <, +<  ,  , , ,,, <,,       <                   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <  ,   ,                           <             <         < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |.         <   << <<<<<<< < <<< < <   0 < < << >  <    >        <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x134   |                |
+  x103   |                |
+  x97    |                |
+
+./soup.py --n 4096 --seed 1612 --epochs 100000
+
+ 100000      0.1253      286.0         1   323.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    -<<                                                ,  < .   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     <                             0 0    ,    < <        <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <                         <     <    <{ >      >             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x358   |[[[[[[[[[[[[[[[[|
+  x131   |<<<<<<<<<<<<<<<<|
+  x102   |                |
+
+./soup.py --n 4096 --seed 1610 --epochs 100000
+
+ 100000      0.1558      244.9         1   392.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   >      <    ,<,   <   <     ><       -        <<        [[  [|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <<                   >        >                      [   { <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | . <<       >                              >           <    < <>|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x196   |[[[[[[[[[[[[[[[[|
+  x172   |<<<<<<<<<<<<<<<<|
+  x92    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1613 --epochs 100000
+
+ 100000      0.0632      215.5         1   281.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    - + ,           ,  ,    <    >  <                 ><<  <<<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     <       ,},     <  <  <                {       >   , <<   <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     > < , <                   ,,                 , <<        < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x110   |                |
+  x96    |                |
+  x84    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1620 --epochs 100000
+
+  45600      3.7378      524.0        85   133.0s
+
+*** state transition: complexity crossed 1.0 at epoch 45600 ***
+
+most common whole tapes:
+  x85    |[ <      ,    }].,        ,,. ]] .,,        ,.]}    ,      < [  |
+         exact self-copy 0% of trials, median 50/64 bytes copied into the food tape
+  x84    |  [ <      ,    }].,        ,,. ]] .,,        ,.]}    ,      < [|
+         exact self-copy 0% of trials, median 50/64 bytes copied into the food tape
+  x30    |  [ <      ,    }].,        ,,. ]] .,,        ,.]}    ,      < [|
+         exact self-copy 0% of trials, median 50/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x653   |  ,,. ]] .,,    |
+  x653   |    ,,. ]] .,,  |
+  x650   |   ,,. ]] .,,   |
+
+./soup.py --n 4096 --seed 1614 --epochs 100000
+
+ 100000      0.0999      263.4         1   285.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                                                   ,    ,       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,   ,        <                      -                   <      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |,,, -                   >                     ,,                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x212   |,,,,,,,,,,,,,,,,|
+  x147   |                |
+  x77    |                |
+
+./soup.py --n 4096 --seed 1615 --epochs 100000
+
+ 100000      0.1259      222.8         1   281.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |      + ,-       [        ]                                     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          <   <     > <    -     >                    <<        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       ,   <,,, >>,,,    ,<     .. .....       <    000         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x207   |                |
+  x129   |<<<<<<<<<<<<<<<<|
+  x122   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1616 --epochs 100000
+
+  93800      1.2203      282.6         2   288.0s
+
+*** state transition: complexity crossed 1.0 at epoch 93800 ***
+
+most common whole tapes:
+  x2     |]00  0 000      [  ,   < }] <                 < ]} <   ,  [     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x2     |  0[  0 0.0 ,   < }] <                 < ]} <   ,  [  0 0 00 <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   0 0 0 0  [  ,   < }] <                 < ]} <   , 0[0 0[0[0  |
+         exact self-copy 0% of trials, median 16/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x792   |     < ]} <   , |
+  x772   |    < ]} <   ,  |
+  x760   |   < ]} <   ,  [|
+
+./soup.py --n 4096 --seed 1617 --epochs 100000
+
+ 100000      0.1055      144.1         1   290.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |,  < , ,<                                   <     < <           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | < < <     <            > >  >                     ,    <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   -           ,   -                               ,         ,+-|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x131   |                |
+  x105   |                |
+  x96    |                |
+
+./soup.py --n 4096 --seed 1618 --epochs 100000
+
+ 100000      0.1619      237.4         1   302.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |          <    ,     <                  ,   ,      ,+    [    < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |],,+,, ,,<,, ,, ,,  , ,, ,, ,, ,, ,, ,, ,, ,,    ,        <<<<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |        + +<+<   < ,  <        <           .                    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x281   |<<<<<<<<<<<<<<<<|
+  x204   |>>>>>>>>>>>>>>>>|
+  x147   |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1619 --epochs 100000
+
+ 100000      0.1023      276.4         1   317.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |              {          >               <      }  ,      ,,,   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<                                                           <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,,   << <          >                                          <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x131   |[[[[[[[[[[[[[[[[|
+  x104   |                |
+  x104   |                |
+
+./soup.py --n 4096 --seed 1621 --epochs 100000
+
+ 100000      0.0991      290.6         1   293.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                                           .  ,    ,,,,,       ,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |            > >  >                   ,         <    < < <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     <                           <                    <        <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x105   |,,,,,,,,,,,,,,,,|
+  x88    |[[[[[[[[[[[[[[[[|
+  x73    |                |
+
+./soup.py --n 4096 --seed 1622 --epochs 100000
+
+ 100000      0.1171      219.7         1   324.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |        < <   {                  <        < >    <             0|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                    <      >                  >                 |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       ,     . ,                           .              . ,   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x148   |>>>>>>>>>>>>>>>>|
+  x118   |<<<<<<<<<<<<<<<<|
+  x94    |                |
+
+./soup.py --n 4096 --seed 1623 --epochs 100000
+
+ 100000      0.1342      253.5         1   313.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<    < >   <       <  [<><     < >      <      <                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       < , >  >           +               >   <               . |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       <           ,<<                             , <          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x114   |                |
+  x111   |                |
+  x104   |                |
+
+./soup.py --n 4096 --seed 1624 --epochs 100000
+
+ 100000      0.1494      248.3         1   282.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                     >>            >  >,                      < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |+ <+   < <                 >>               > >  <    >   >     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                               >                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x184   |<<<<<<<<<<<<<<<<|
+  x114   |[[[[[[[[[[[[[[[[|
+  x95    |                |
+
+./soup.py --n 4096 --seed 1625 --epochs 100000
+
+ 100000      0.1065      267.6         1   289.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | >                                                              |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,,<                                .  .     ,  ,,       <    >>|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    <   < < < <   < < < <     < <  , ,<    <                    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x149   |                |
+  x116   |[[[[[[[[[[[[[[[[|
+  x99    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1626 --epochs 100000
+
+ 100000      0.1060      277.7         1   291.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |         <            <<<        <   +               >      }   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     <<    <    <                >                          <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |.         -.. .. .     . ...   .   . ... .. ... .               |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x237   |<<<<<<<<<<<<<<<<|
+  x183   |                |
+  x144   |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1627 --epochs 100000
+
+ 100000      0.1527      257.6         1   290.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   >                        <          {           ,,    <      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |,.    -                                         + ,  <   <<<<  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <<                               {{        ,   0    0        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x163   |                |
+  x100   |                |
+  x99    |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1628 --epochs 100000
+
+ 100000      0.1134      228.3         1   304.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |        <  -           {       >                                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                    <<               ,          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,     >  <    <                               ,<       <  <<0  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x170   |                |
+  x155   |<<<<<<<<<<<<<<<<|
+  x146   |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1630 --epochs 100000
+
+ 100000      0.1490      273.3         1   323.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |>  }     {    <              <                      0<   ,   ,  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          <           .       0          < >    ,   ,  {.  <  < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       <>  . < <       <    <   >  <  ,< >               <  ,< -|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x224   |[[[[[[[[[[[[[[[[|
+  x159   |                |
+  x155   |                |
+
+./soup.py --n 4096 --seed 1631 --epochs 100000
+
+ 100000      0.1104      251.5         1   285.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                      >>    >   ,            ,   , ,  <         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   , <               >                               <<    ,    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <<,     <+ {,  < -[  ]<]     , ,  , <       .[<     +         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x167   |,,,,,,,,,,,,,,,,|
+  x103   |>>>>>>>>>>>>>>>>|
+  x87    |                |
+
+./soup.py --n 4096 --seed 1629 --epochs 100000
+
+ 100000      0.0597      277.4         1   430.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   0  0                <                        <        >      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     >                                         < <             >|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                   <       <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x75    |<<<<<<<<<<<<<<<<|
+  x71    |                |
+  x69    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1632 --epochs 100000
+
+ 100000      0.1059      192.4         1   289.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |             ,<,,   <  ,,, <          {    <<<       ,, , , ,  ,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <                ,                   < ,                     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                   <        < <     <           .     ,         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x148   |                |
+  x91    |<<<<<<<<<<<<<<<<|
+  x83    |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1633 --epochs 100000
+
+ 100000      0.1404      294.7         1   313.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |,       <    <      <                                    .   <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |         < ]  ,                                               <>|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                               .                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x124   |<<<<<<<<<<<<<<<<|
+  x116   |                |
+  x88    |                |
+
+./soup.py --n 4096 --seed 1635 --epochs 100000
+
+ 100000      0.0988      244.2         1   291.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |     ,                    <    <<    < <    <<      , ,    < ,, |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |] <                             [<         <<        [       << |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<       {,,, ,              <<  <                               |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x84    |                |
+  x77    |                |
+  x74    |                |
+
+./soup.py --n 4096 --seed 1634 --epochs 100000
+
+ 100000      0.0914      277.5         1   329.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  ,       .<             >            +                }}    >  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |]]      -                >    ,   >>   [ }         <         +++|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    <<             >                <  >   >>>   >          <  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x188   |                |
+  x114   |<<<<<<<<<<<<<<<<|
+  x112   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1637 --epochs 100000
+
+ 100000      0.0922      215.7         1   318.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |> <    . <<  ,     ,,   ,   ,   ,                 <             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,  >    <                   <<   ,   <<    ,<<      ,   , , ,  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   .      0          > -         <        <<           [    <  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x158   |                |
+  x138   |,,,,,,,,,,,,,,,,|
+  x82    |                |
+
+./soup.py --n 4096 --seed 1636 --epochs 100000
+
+ 100000      0.0897      252.8         1   326.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   >             +                              <            <<<|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | .   0       ,                  <    ,              }           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <             }             >      -           {              |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x108   |,,,,,,,,,,,,,,,,|
+  x106   |[[[[[[[[[[[[[[[[|
+  x92    |                |
+
+./soup.py --n 4096 --seed 1638 --epochs 100000
+
+ 100000      0.2073      258.5         1   292.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | <       ,  <    ,   ,}         , < ,              {{ >  + .   >|
+         exact self-copy 0% of trials, median 2/64 bytes copied into the food tape
+  x1     |        <                                            , ,,   >> ,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |               <    ,     >                      <  <        <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x1113  |                |
+  x247   |,,,,,,,,,,,,,,,,|
+  x126   |                |
+
+./soup.py --n 4096 --seed 1643 --epochs 100000
+
+  41700      2.3461      492.8        93   117.5s
+
+*** state transition: complexity crossed 1.0 at epoch 41700 ***
+
+most common whole tapes:
+  x93    |.[ < ,  >  }        <         ]]               ]         }  ,<[ |
+         exact self-copy 0% of trials, median 7/64 bytes copied into the food tape
+  x89    | [<,  }         ]               ]]         <        }  >  , < [.|
+         exact self-copy 0% of trials, median 7/64 bytes copied into the food tape
+  x48    |  [<,  }         ]               ]]         <        }  >  , < [|
+         exact self-copy 0% of trials, median 7/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x1270  |>  }        <   |
+  x1261  |  }        <    |
+  x1249  | }        <     |
+
+./soup.py --n 4096 --seed 1640 --epochs 100000
+
+ 100000      0.1168      253.3         1   284.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<  +  <                               ,,,,   ,           +    } |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <        ,   >><    -     >                    ,     ,       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   ,,<      ,                                       <     <  << |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x129   |<<<<<<<<<<<<<<<<|
+  x120   |                |
+  x93    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1641 --epochs 100000
+
+ 100000      0.1025      194.6         1   312.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    +                                               +       <  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |         <  <    <         <     0                -             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<            0             ]             .   <<  < >0  {  0,    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x147   |                |
+  x117   |                |
+  x99    |                |
+
+./soup.py --n 4096 --seed 1642 --epochs 100000
+
+ 100000      0.0936      239.7         1   286.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |0                                               >>  < <<<  >    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                           <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <       >                       .             {      ,       - |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x101   |,,,,,,,,,,,,,,,,|
+  x88    |                |
+  x74    |                |
+
+./soup.py --n 4096 --seed 1639 --epochs 100000
+
+ 100000      0.0938      237.0         1   373.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    <   <   < <            <                 <<        <  .   < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <      <                                         ,  <          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |             ,<                    >                     <   << |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x133   |,,,,,,,,,,,,,,,,|
+  x109   |                |
+  x108   |                |
+
+./soup.py --n 4096 --seed 1644 --epochs 100000
+
+ 100000      0.1394      248.4         1   340.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |           <          ,,,            .              <           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   , <,     <>< <>>>     < <      < <    <  ,       >  .   ..   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | }         <      }   ,                    <                    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x142   |<<<<<<<<<<<<<<<<|
+  x109   |[[[[[[[[[[[[[[[[|
+  x103   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1647 --epochs 100000
+
+ 100000      0.1735      266.6         1   291.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | <                >     <                          0 <     ,   <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          <        <                            0 <          >  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x142   |[[[[[[[[[[[[[[[[|
+  x109   |                |
+  x107   |                |
+
+./soup.py --n 4096 --seed 1646 --epochs 100000
+
+ 100000      0.0832      245.0         1   295.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |        }    <    +> >+   ..   <<            >{ {       -       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |,,,  >      ,   ,                     ,,     <+ -       ,,      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     ,,,,, ,,,, ,,,,,,,, ,,,,,,,,,,,,,,,,,  ,,  , ,             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x130   |,,,,,,,,,,,,,,,,|
+  x110   |                |
+  x106   |                |
+
+./soup.py --n 4096 --seed 1648 --epochs 100000
+
+ 100000      0.1392      224.3         1   289.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                       }                        >            > ,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                          <,    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <<< <<<<< ,<<,<     <   <    <     <,                         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x203   |[[[[[[[[[[[[[[[[|
+  x111   |                |
+  x106   |                |
+
+./soup.py --n 4096 --seed 1645 --epochs 100000
+
+ 100000      0.1200      254.6         1   336.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |      .     {                              > >            ><    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |         <                                           .   << <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                     .. >                                       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x179   |                |
+  x112   |[[[[[[[[[[[[[[[[|
+  x79    |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1649 --epochs 100000
+
+ 100000      0.1709      267.2         1   290.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |           >       [[[[[[[[ [[[[[[[[[[[[[[[[[[[[ [[[[][   [ +   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |.          <  <  <                 }            ,            <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |           ,         <       ,                     <            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x258   |[[[[[[[[[[[[[[[[|
+  x204   |                |
+  x165   |                |
+
+./soup.py --n 4096 --seed 1651 --epochs 100000
+
+ 100000      0.1344      241.9         1   297.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  0                                           <       <    <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <             <                               <  ,         <<|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    ,      ,                                             0   <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x157   |                |
+  x153   |<<<<<<<<<<<<<<<<|
+  x116   |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1652 --epochs 100000
+
+ 100000      0.1722      274.5         1   297.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    <<           <                                       >      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |{    <     . ,<<     {       <       {,     <<   <   0   ,  ,   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |><        .       <    <<                    ,   ,            < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x148   |<<<<<<<<<<<<<<<<|
+  x123   |                |
+  x122   |                |
+
+./soup.py --n 4096 --seed 1653 --epochs 100000
+
+ 100000      0.1288      206.8         1   296.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |               <    -         {                        , < <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<  <   <, <    ,  {      >  <          < >   ..   <<            |
+         exact self-copy 0% of trials, median 2/64 bytes copied into the food tape
+  x1     | ,  <                  <            , , ,     <         <   <  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x125   |                |
+  x102   |                |
+  x91    |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1650 --epochs 100000
+
+ 100000      0.0994      214.3         1   409.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |         ,   <                        <   <             <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |{   <     <    < 0  <.       ,        <          ,         ,,,  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      <              }     ,                 {,,,    <<<<       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x137   |                |
+  x126   |{{{{{{{{{{{{{{{{|
+  x94    |                |
+
+./soup.py --n 4096 --seed 1655 --epochs 100000
+
+ 100000      0.1210      261.2         1   298.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |,,                                                      <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      ,                                       < <{        <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     ,, , <                                  <  <,,             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x282   |<<<<<<<<<<<<<<<<|
+  x195   |[[[[[[[[[[[[[[[[|
+  x147   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1657 --epochs 100000
+
+ 100000      0.1949      245.5         1   303.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |       +      >      >  >        <       >               [      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |.,           >                                           << <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |>     }      <       <                <       << {  0           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x496   |[[[[[[[[[[[[[[[[|
+  x133   |                |
+  x124   |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1654 --epochs 100000
+
+ 100000      0.1640      284.6         1   318.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    >             .           .     .                     .     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       >        {    }                                          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      <                                                  0      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x165   |                |
+  x144   |<<<<<<<<<<<<<<<<|
+  x100   |                |
+
+./soup.py --n 4096 --seed 1656 --epochs 100000
+
+ 100000      0.1852      249.1         1   317.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    ,,           > ><>  >    >        <                  ,   ,< |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,,       >       >           > > ,       ,                     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   .    -            <             ,,                           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x208   |                |
+  x176   |                |
+  x167   |                |
+
+./soup.py --n 4096 --seed 1658 --epochs 100000
+
+ 100000      0.0898      288.6         1   322.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |           <<        >               ,     ,        > >   < <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    ,                                        >[>[ +             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          ]  ] ]]                        ] ]                    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x111   |                |
+  x61    |<<<<<<<<<<<<<<<<|
+  x58    |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1659 --epochs 100000
+
+ 100000      0.1003      227.5         1   419.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | {{  <,               <                  <      <         <<<{< |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                            .                      ,<  <<    .  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   < <                        ,       <      , <<< ><<<<<<<<<<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x147   |>>>>>>>>>>>>>>>>|
+  x136   |                |
+  x110   |                |
+
+./soup.py --n 4096 --seed 1661 --epochs 100000
+
+  94600      2.5524      151.0         1   346.0s
+
+*** state transition: complexity crossed 1.0 at epoch 94600 ***
+
+most common whole tapes:
+  x1     |    00[  [, }          <       [ <          } ,[  [  [<  0   0 0|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    0                 [  [  [, }          <     [  [     0 0  < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<  000 [, }          <      <  <  <  <  <       <    0 0{0{{{0  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x1293  |[, }          < |
+  x1293  |, }          <  |
+  x1280  | [, }          <|
+
+./soup.py --n 4096 --seed 1660 --epochs 100000
+
+ 100000      0.1377      324.2         1   355.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<     <<<  <<    ,   <>< >  > <<< <> >>  >><> , <<              |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |              <           ,                        0     <  << <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <               < <     }          <                   <      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x164   |<<<<<<<<<<<<<<<<|
+  x138   |                |
+  x133   |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1662 --epochs 100000
+
+ 100000      0.0996      277.4         1   363.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |< <   {<  ,,  ,       -                       >              << |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                               <    ,, ,            <           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |         >       .                                          <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x121   |<<<<<<<<<<<<<<<<|
+  x95    |>>>>>>>>>>>>>>>>|
+  x91    |                |
+
+./soup.py --n 4096 --seed 1663 --epochs 100000
+
+ 100000      0.1566      216.9         1   358.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |, ,. ,   +,   -           .           [   ,         ,           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                <             >                 ,  ,  ,,   <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | < <- , [  ,[   <<  [     [   [       >          <         { <{ |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x252   |                |
+  x116   |                |
+  x107   |                |
+
+./soup.py --n 4096 --seed 1666 --epochs 100000
+
+  91900      2.8353      149.0        18   323.2s
+
+*** state transition: complexity crossed 1.0 at epoch 91900 ***
+
+most common whole tapes:
+  x18    |     [  {       .>]  ]>.       {  [                             |
+         exact self-copy 0% of trials, median 24/64 bytes copied into the food tape
+  x17    |                             [  {       .>]  ]>.       {  [     |
+         exact self-copy 0% of trials, median 24/64 bytes copied into the food tape
+  x9     |                  [  {       .>]  ]>.       {  [                |
+         exact self-copy 0% of trials, median 12/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x2092  |    [  {       .|
+  x2025  |     [  {       |
+  x2016  |   [  {       .>|
+
+./soup.py --n 4096 --seed 1665 --epochs 100000
+
+ 100000      0.1353      243.5         1   355.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                      <             ,,         <             0  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                          {{     <              |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  >.-      . >                            ,+             <    > |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x183   |[[[[[[[[[[[[[[[[|
+  x126   |                |
+  x118   |                |
+
+./soup.py --n 4096 --seed 1664 --epochs 100000
+
+ 100000      0.1072      188.8         1   368.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   <<  << <          <                       < <   0       ,    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                        ,                            < < <<<   <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          < <   }   }  , <     <}     }     }              ,<   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x249   |<<<<<<<<<<<<<<<<|
+  x162   |                |
+  x85    |                |
+
+./soup.py --n 4096 --seed 1668 --epochs 100000
+
+ 100000      0.1545      215.2         1   356.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | <           < <<<   , ,     ,   ,  ,,, <   ,  <       ,,,    , |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <[            ]                                   <       ,,  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <<<  , , <                          ,<   <<  <   <       -    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x187   |                |
+  x174   |                |
+  x119   |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1667 --epochs 100000
+
+ 100000      0.1272      308.5         1   367.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  0            } < -                           >   {        .-, |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | < <<<<<<<  < <<<<       < <<<><<<<<<<<<<<<<<<<<<<<<<<,<      > |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |> >>>  >>>>>>>>>>>>>>>>>>>      >     ,         <,    ,     <<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x162   |>>>>>>>>>>>>>>>>|
+  x138   |<<<<<<<<<<<<<<<<|
+  x114   |                |
+
+./soup.py --n 4096 --seed 1669 --epochs 100000
+
+ 100000      0.1108      209.1         1   377.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |--  <. ,   <   >    > ><                > >       <  .  ,>  +   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                      ,         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          .            <  -  < -    .  >>.     ><<    >  -      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x141   |<<<<<<<<<<<<<<<<|
+  x138   |                |
+  x125   |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1670 --epochs 100000
+
+ 100000      0.1270      263.4         1   348.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   -   -         -,    +  ,    ,   <                +,          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |>>   <              <    .<  <  <   ,                <      +   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,,       <  .                  }      +                <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x194   |                |
+  x190   |>>>>>>>>>>>>>>>>|
+  x161   |                |
+
+./soup.py --n 4096 --seed 1671 --epochs 100000
+
+ 100000      0.1036      219.5         1   351.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | ,   . >> >+               <                           < > <  { |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                 <                                     0        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <<              <              .                   ,,       , |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x159   |<<<<<<<<<<<<<<<<|
+  x129   |,,,,,,,,,,,,,,,,|
+  x111   |                |
+
+./soup.py --n 4096 --seed 1672 --epochs 100000
+
+ 100000      0.0812      222.5         1   398.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   >><<< >< >                            <  000,<            }} |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <<<            >       <                            <<         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                .                                 {       <    >|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x242   |<<<<<<<<<<<<<<<<|
+  x228   |                |
+  x115   |                |
+
+./soup.py --n 4096 --seed 1673 --epochs 100000
+
+ 100000      0.0621      214.0         1   356.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                                                              [ |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |]                                        ..  << ,<       . <<   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  .<                                                        < <<|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x118   |[[[[[[[[[[[[[[[[|
+  x99    |                |
+  x98    |                |
+
+./soup.py --n 4096 --seed 1674 --epochs 100000
+
+ 100000      0.1379      262.8         1   336.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<   <     >     <<<                           <        ,  <  -  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |,,..    ..   > ,                                 <<         <<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   ,    [     .         0  0 ]  0[  0  0                     <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x135   |                |
+  x134   |<<<<<<<<<<<<<<<<|
+  x101   |                |
+
+./soup.py --n 4096 --seed 1675 --epochs 100000
+
+ 100000      0.1122      286.5         1   363.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                                               ,                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     ,  } ,                           <  <                ,  <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |0      <                               -,     ,,, , ,  <    <  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x179   |>>>>>>>>>>>>>>>>|
+  x169   |[[[[[[[[[[[[[[[[|
+  x131   |                |
+
+./soup.py --n 4096 --seed 1678 --epochs 100000
+
+ 100000      0.1345      250.2         1   348.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |]<.   <                      >               <<   <   < <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |, <.                             <          <<< ,,  >, <<< <<  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ] {  >    >       <-<    .   +      +                         {|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x198   |                |
+  x125   |<<<<<<<<<<<<<<<<|
+  x120   |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1676 --epochs 100000
+
+ 100000      0.0988      283.9         1   370.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |{{               <.          ,<            -      .             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <    <<, {  <<  <<  <   < ,   .       .                  <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |]        >> <                          ,         <,  ,,  {<   >>|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x139   |                |
+  x126   |<<<<<<<<<<<<<<<<|
+  x121   |                |
+
+./soup.py --n 4096 --seed 1677 --epochs 100000
+
+ 100000      0.1084      233.5         1   353.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |>> >>>>>>>>>>>>>>>>>>>>>>>>>>>   ,    >  , ,, ,             <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  ]    [>       ,   ,   ,   ,   ,   ,   ,   ,            ,    . |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <                          {                                   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x187   |                |
+  x131   |,,,,,,,,,,,,,,,,|
+  x117   |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1679 --epochs 100000
+
+ 100000      0.1124      249.0         1   345.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                       >>>>>   <        ,      [[[<            <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,,      >           >                   {    .  -,      ,   ,  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                               <         <  <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x257   |,,,,,,,,,,,,,,,,|
+  x105   |                |
+  x104   |                |
+
+./soup.py --n 4096 --seed 1681 --epochs 100000
+
+ 100000      0.1107      231.3         1   332.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |0  [    [ [[[[[[[  [ [[[ [[[ [[[[[[[ [[[[ +[ [ -  [  0[   .<  {{|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |< < <              ,     ,         < ,    ,               <<    |
+         exact self-copy 0% of trials, median 2/64 bytes copied into the food tape
+  x1     |                     <  ,>                     .<       <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x210   |>>>>>>>>>>>>>>>>|
+  x117   |                |
+  x114   |                |
+
+./soup.py --n 4096 --seed 1680 --epochs 100000
+
+ 100000      0.0613      214.4         1   388.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   ,<                                      <  << <   <     >    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  ,             <                                 >        < <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | .  }  [[    } [      [ [     [        [       [    < >   <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x212   |                |
+  x133   |,,,,,,,,,,,,,,,,|
+  x73    |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1682 --epochs 100000
+
+ 100000      0.1530      229.4         1   341.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |               >                                     , ,<,<   <<|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          <   < <  -                  <<   ,                  , |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |{  <                                                            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x684   |                |
+  x141   |<<<<<<<<<<<<<<<<|
+  x113   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1684 --epochs 100000
+
+ 100000      0.0944      277.5         1   334.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |, <   < < < < < < < < < <   < < < <   <           <            <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,  ,                                                 < <   , , |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | }  }             ,  >< <                         >     > > < < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x84    |<<<<<<<<<<<<<<<<|
+  x76    |[[[[[[[[[[[[[[[[|
+  x75    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1683 --epochs 100000
+
+ 100000      0.1211      307.4         1   338.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<+            {{  {. .. <<{  .{ {{ {{{ { }{   -          > >    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   ,,             <  <    <                   ,+            [[[[|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | < {       .                                          }         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x212   |>>>>>>>>>>>>>>>>|
+  x199   |<<<<<<<<<<<<<<<<|
+  x149   |                |
+
+./soup.py --n 4096 --seed 1688 --epochs 100000
+
+ 100000      0.1217      213.4         1   347.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | .<  }                          .                           <<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    <                                                           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     <   <            <        <   .                            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x119   |[[[[[[[[[[[[[[[[|
+  x113   |<<<<<<<<<<<<<<<<|
+  x100   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1685 --epochs 100000
+
+ 100000      0.1306      314.5         1   363.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  <<  ,  <                     <                <               |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       0   <0 0                  [[    <+[     ]     <        <<|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <    <                             <                ,  ,<< ,,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x141   |<<<<<<<<<<<<<<<<|
+  x104   |                |
+  x93    |                |
+
+./soup.py --n 4096 --seed 1686 --epochs 100000
+
+ 100000      0.1510      204.2         1   355.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                          0                      >       <,   < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | < ,   ,<   <<     <          <          <  <       <      }    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<             ,    ,     {                             ,, >  > >|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x294   |<<<<<<<<<<<<<<<<|
+  x204   |                |
+  x134   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1687 --epochs 100000
+
+ 100000      0.1467      259.9         1   361.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | < >       -  +       ,                            >      <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      <         {            0     <                            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<<<  0>>< ,   -,,                                  ,  <<        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x151   |<<<<<<<<<<<<<<<<|
+  x135   |                |
+  x124   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1689 --epochs 100000
+
+ 100000      0.1277      244.1         1   336.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |          0                                         <      < <> |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    >                                           >         ,<,,,<|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  < ,<  ,         ,         <           > [ [       <   < <<    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x215   |<<<<<<<<<<<<<<<<|
+  x181   |                |
+  x126   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1690 --epochs 100000
+
+ 100000      0.1700      254.7         1   327.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<                  <                                     <   << |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <                           < <     <     ,,    <     }     }  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |0    [[  [[[[[ [[[ [  [}[[-[[[[[ [[[ [[  [,, [ [           ,   ,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x116   |                |
+  x111   |                |
+  x109   |                |
+
+./soup.py --n 4096 --seed 1691 --epochs 100000
+
+ 100000      0.0985      240.6         1   334.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    < ,    ,   ,     ,,,  <      ,,,,             <             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  .   .       .    ,                                   <,       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |]<           - <                                              , |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x100   |                |
+  x84    |                |
+  x75    |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1693 --epochs 100000
+
+ 100000      0.1086      236.4         1   353.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   ,  <                   <                         <   << < <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  ,          >>  >               >          >>      ,  ,   <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<     <                                                         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x138   |<<<<<<<<<<<<<<<<|
+  x121   |                |
+  x100   |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1692 --epochs 100000
+
+ 100000      0.1455      234.2         1   361.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |      >               <            <              <<<    <      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                              }          <               <<     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     <<   ,                                           ,< ,,     |
+         exact self-copy 0% of trials, median 2/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x181   |                |
+  x136   |                |
+  x122   |                |
+
+./soup.py --n 4096 --seed 1694 --epochs 100000
+
+ 100000      0.1043      260.9         1   357.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<  >   .>     <  >             ,,       -  ,                 000|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                  <<            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |>>>]-    ,,  >>                                      ,      <<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x219   |,,,,,,,,,,,,,,,,|
+  x181   |[[[[[[[[[[[[[[[[|
+  x112   |                |
+
+./soup.py --n 4096 --seed 1697 --epochs 100000
+
+ 100000      0.1368      191.8         1   339.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<<  ,,<   < }       ,         {                        ,  ,     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<   0<       > ,       ,           ,               <    < <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   << < << < <     <  <<   <      <  , <     <  <         < ><  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x211   |[[[[[[[[[[[[[[[[|
+  x161   |                |
+  x101   |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1696 --epochs 100000
+
+ 100000      0.1081      296.9         1   341.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | >       [ [                                             < <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |< ,<   <         ,           }      <      <          { < <    <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                      >              <         {|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x126   |[[[[[[[[[[[[[[[[|
+  x115   |,,,,,,,,,,,,,,,,|
+  x106   |                |
+
+./soup.py --n 4096 --seed 1698 --epochs 100000
+
+ 100000      0.0914      282.4         1   353.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  .  <                                ,           <   <  +      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,+,<<         <                          <         ,   < < < < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |< <, <                                           [   ,     >>  >|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x176   |                |
+  x105   |[[[[[[[[[[[[[[[[|
+  x91    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1695 --epochs 100000
+
+ 100000      0.1420      272.5         1   393.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |           <>>>    ,,                                         > |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <          ,{ <<, , <  }  }<      ,           {  <  ,,        |
+         exact self-copy 0% of trials, median 2/64 bytes copied into the food tape
+  x1     |             <         <<                   -    <     <    >  0|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x98    |                |
+  x97    |                |
+  x86    |                |
+
+./soup.py --n 4096 --seed 1699 --epochs 100000
+
+ 100000      0.1702      267.7         1   335.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |        ,   >>     <<      >  .  <<     >>  < <.<       <,  < < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |        <               <         + <       +  < -              |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    < .        <       ,         ,                  <<          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x189   |<<<<<<<<<<<<<<<<|
+  x130   |,,,,,,,,,,,,,,,,|
+  x100   |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1700 --epochs 100000
+
+ 100000      0.2075      272.1         1   345.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |        . ...... ...  .. ...{.  ......... ........  ,,  {    -  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <<  <       >  >         >><>                        <  < <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<<< <         >     >>>>                                 <      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x229   |<<<<<<<<<<<<<<<<|
+  x183   |                |
+  x123   |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1701 --epochs 100000
+
+ 100000      0.0958      229.1         1   328.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  ,    < << << <     <,,  <  <         <  .        { <    { < { |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      <  ,  <,  ,  , ,  ><                     -  <             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      ,<         .               <              <  <            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x191   |[[[[[[[[[[[[[[[[|
+  x158   |                |
+  x76    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1704 --epochs 100000
+
+ 100000      0.1728      256.3         1   322.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |,    <                                              <  <<      <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |],           + +<+   + + + + + +   + + {,+   + +  >         ,   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <    <                        -<      <  +,    ,             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x164   |                |
+  x139   |,,,,,,,,,,,,,,,,|
+  x135   |                |
+
+./soup.py --n 4096 --seed 1702 --epochs 100000
+
+ 100000      0.1447      310.1         1   351.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |     <  <   ,                           << .           ,        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | << << >,     .   >          <                      0<     <   <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                           <<              -              ,     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x228   |<<<<<<<<<<<<<<<<|
+  x157   |[[[[[[[[[[[[[[[[|
+  x144   |                |
+
+./soup.py --n 4096 --seed 1705 --epochs 100000
+
+ 100000      0.1549      240.6         1   318.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |,+  <     0   0 0  <<          <      .                > >     >|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |,  ,                                    <    <       <<        <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,,,          <,                               <<    <,  ,      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x226   |>>>>>>>>>>>>>>>>|
+  x144   |,,,,,,,,,,,,,,,,|
+  x128   |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1703 --epochs 100000
+
+ 100000      0.1000      220.0         1   391.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |<  ,<       } <  <    {   <        <  <      <  < <    .        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |}                                             <    ,   <   .    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  ><,       <       > < ,                   <                   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x142   |,,,,,,,,,,,,,,,,|
+  x136   |                |
+  x108   |                |
+
+./soup.py --n 4096 --seed 1706 --epochs 100000
+
+ 100000      0.1477      245.4         1   352.4s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   [       [][ [ [       [ [   [     [ []    [       <    ,{    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <><<<    .         >   {     {    <   {{   <                 < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <  < [                     <                    0              |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x169   |<<<<<<<<<<<<<<<<|
+  x166   |>>>>>>>>>>>>>>>>|
+  x154   |                |
+
+./soup.py --n 4096 --seed 1707 --epochs 100000
+
+ 100000      0.0568      199.8         1   344.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |{{              .   <      <  }     <     <<  . ,,<{{{<  < << <<|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  > ,                -             .             <<<}  {     <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<  >  <    >   <             [                     -, <    >   <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x115   |                |
+  x83    |                |
+  x80    |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1708 --epochs 100000
+
+ 100000      0.1189      220.0         1   372.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    {        < <                         }           ,  < < , < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <   >                          <       <   <.            <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <<   <   >                                        { {<<      } |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x115   |,,,,,,,,,,,,,,,,|
+  x103   |                |
+  x99    |                |
+
+./soup.py --n 4096 --seed 1709 --epochs 100000
+
+ 100000      0.1553      223.7         1   334.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |+                                                -<             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |            <<      -                                 +  -      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          ,   <                                   ,<         .>>|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x248   |<<<<<<<<<<<<<<<<|
+  x203   |                |
+  x166   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1710 --epochs 100000
+
+ 100000      0.1101      253.0         1   334.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | ]     ,         >         >            <{  + <             ,   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |               < <    > {                        ,,,,     <  << |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  .                  }   +     .                               0|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x202   |                |
+  x186   |,,,,,,,,,,,,,,,,|
+  x159   |                |
+
+./soup.py --n 4096 --seed 1711 --epochs 100000
+
+ 100000      0.1271      318.1         1   330.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                                                     ,    [ ,   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <<>                                     <<   ,     <<    << <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | >  >     [[                                <    <     <   {   {|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x150   |,,,,,,,,,,,,,,,,|
+  x119   |                |
+  x81    |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1715 --epochs 100000
+
+  74300      2.7013      606.1        42   247.9s
+
+*** state transition: complexity crossed 1.0 at epoch 74300 ***
+
+most common whole tapes:
+  x42    |    [   {  .> ]    { {>  . {   > >   { .  >{ {    ] >.  {   [   |
+         exact self-copy 0% of trials, median 28/64 bytes copied into the food tape
+  x42    |   [   {  .> ]    { {>  . {   > >   { .  >{ {    ] >.  {   [    |
+         exact self-copy 0% of trials, median 28/64 bytes copied into the food tape
+  x38    |   [   {  .> ]    { {>  . {   > >   {    >{ {    ] >.  {   [    |
+         exact self-copy 0% of trials, median 23/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x471   |                |
+  x466   |       [   {  .>|
+  x464   |            [   |
+
+./soup.py --n 4096 --seed 1713 --epochs 100000
+
+ 100000      0.1459      291.0         1   346.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | <     >                 <              ,               <       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  <     {    { <       <      ,      , <        ,,       <}}} <}|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |,, <                          <<     <  <     <<        . ,<  , |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x197   |<<<<<<<<<<<<<<<<|
+  x137   |                |
+  x109   |                |
+
+./soup.py --n 4096 --seed 1712 --epochs 100000
+
+ 100000      0.1147      250.3         1   389.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    <     , ->      >>    <                         +     <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   >>       >   <  <  >  <               < <   <     +       <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  ,.,                          ,           <    <    , <        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x196   |,,,,,,,,,,,,,,,,|
+  x136   |                |
+  x126   |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1716 --epochs 100000
+
+  76100      2.8839     2059.2         2   297.7s
+
+*** state transition: complexity crossed 1.0 at epoch 76100 ***
+
+most common whole tapes:
+  x2     |          <     [  <  ,} ] ,  >  } }   } }  >  , ] }, ,<  [-  - |
+         exact self-copy 0% of trials, median 33/64 bytes copied into the food tape
+  x2     |,               }  -[  <, ,} ] ,  >>  , ] }, ,<  [-  }          |
+         exact self-copy 0% of trials, median 54/64 bytes copied into the food tape
+  x2     |           }  -[  <, ,} ] ,  >  } }   } }  >  , ] }, ,<  [-  }  |
+         exact self-copy 0% of trials, median 51/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x1655  |  >  , ] }, ,<  |
+  x1652  | >  , ] }, ,<  [|
+  x1641  |}  >  , ] }, ,< |
+
+./soup.py --n 4096 --seed 1714 --epochs 100000
+
+ 100000      0.1242      279.0         1   350.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |     < ,    ,                      <         ,                  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |        <       ,               <   , ,,   +        <    < > >  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    <   -  < <               ,,     <        <                + |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x204   |<<<<<<<<<<<<<<<<|
+  x99    |                |
+  x91    |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1717 --epochs 100000
+
+ 100000      0.1303      282.7         1   342.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                <<                                              |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          ><  >                               .           ,, << |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                ,  , <   <<<<<  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x157   |<<<<<<<<<<<<<<<<|
+  x111   |[[[[[[[[[[[[[[[[|
+  x87    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1718 --epochs 100000
+
+ 100000      0.1011      251.3         1   357.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |      >  , >               <       <                   ,,       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       <>         ,         ,                            < {<  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     <<       ,                        -      ,,<      ,        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x138   |<<<<<<<<<<<<<<<<|
+  x130   |,,,,,,,,,,,,,,,,|
+  x117   |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1719 --epochs 100000
+
+ 100000      0.1205      258.0         1   347.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  .<.. .   >.                                            .      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      < <   >>< >  <  >>>> >              , <         -         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                        . ,.,   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x107   |                |
+  x90    |,,,,,,,,,,,,,,,,|
+  x86    |                |
+
+./soup.py --n 4096 --seed 1720 --epochs 100000
+
+ 100000      0.0797      206.7         1   351.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | <        <   <                     }<         .   ,,   > >> >  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                 <<,        <  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                                   <<<     <    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x130   |,,,,,,,,,,,,,,,,|
+  x106   |>>>>>>>>>>>>>>>>|
+  x89    |                |
+
+./soup.py --n 4096 --seed 1721 --epochs 100000
+
+ 100000      0.1409      254.3         1   353.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |]-   <   ,                                   < <   ,  <     ,   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  ,+,    <    <   >            <     <    ,< , <,               |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      ,                                        - >  >  <<  < << |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x280   |,,,,,,,,,,,,,,,,|
+  x136   |[[[[[[[[[[[[[[[[|
+  x111   |                |
+
+./soup.py --n 4096 --seed 1722 --epochs 100000
+
+ 100000      0.1313      259.2         1   386.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                                                                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |{   <           -- -          <                    .            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   < >, .  , {                     >          <         <  << < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x148   |                |
+  x99    |<<<<<<<<<<<<<<<<|
+  x97    |                |
+
+./soup.py --n 4096 --seed 1723 --epochs 100000
+
+ 100000      0.0690      231.3         1   358.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |,    >>    <<,  <   <<  <   ,  <<    >       <             - [ -|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  > >                < < <      >              ,       < < < <<,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,                    <                                   <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x90    |                |
+  x79    |                |
+  x65    |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1725 --epochs 100000
+
+ 100000      0.0823      207.0         1   356.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |           >          >       <         < <                  < <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                             , , >>  ,  >  > >,,  ,      > ><<><|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<}<<        >    <        }                  .,          ,, <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x96    |<<<<<<<<<<<<<<<<|
+  x74    |                |
+  x73    |>>>>>>>>>>>>>>>>|
+
+./soup.py --n 4096 --seed 1724 --epochs 100000
+
+ 100000      0.1055      189.3         1   360.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |< ,               <   .        >                          <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |            [          <      <]                       -<, ,  - |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                     <                    ,  <<   <      < <> > |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x148   |                |
+  x122   |                |
+  x79    |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1726 --epochs 100000
+
+ 100000      0.1358      250.2         1   374.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |      ,          ,         <                 <          < <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     .                         ..                   >  <<<,, , ,|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      <   ,},,<       {  >         {             <   [          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x146   |                |
+  x144   |<<<<<<<<<<<<<<<<|
+  x98    |                |
+
+./soup.py --n 4096 --seed 1727 --epochs 100000
+
+ 100000      0.1306      268.4         1   365.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    < 0                    > }              >                 < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <          .          }<               >   ,  <<    < <<  >  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | , <              < < >     ><  <     ,    <    <         <   < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x222   |<<<<<<<<<<<<<<<<|
+  x140   |[[[[[[[[[[[[[[[[|
+  x114   |                |
+
+./soup.py --n 4096 --seed 1728 --epochs 100000
+
+ 100000      0.0811      202.4         1   364.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   <   <  <                            +               <    -   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |, <            <                                         ,  <  <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | < ,      >                        <        <<   < <            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x166   |<<<<<<<<<<<<<<<<|
+  x117   |                |
+  x70    |                |
+
+./soup.py --n 4096 --seed 1729 --epochs 100000
+
+ 100000      0.1504      254.3         1   351.1s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |.  <  {    ,  < .  ,,    ,[ ,,+   ]                   . 00   >  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |]                                                               |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<                              {                     ,  , <     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x205   |<<<<<<<<<<<<<<<<|
+  x193   |,,,,,,,,,,,,,,,,|
+  x142   |                |
+
+./soup.py --n 4096 --seed 1730 --epochs 100000
+
+ 100000      0.1514      287.7         1   354.6s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |{                {   <      <  >      <  <<<<  .  ,,,,,      ,  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |<   ,  +<                                +                    [ |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |        >                     <                        ,>    <<<|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x191   |                |
+  x152   |<<<<<<<<<<<<<<<<|
+  x115   |                |
+
+./soup.py --n 4096 --seed 1731 --epochs 100000
+
+ 100000      0.1283      239.9         1   357.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | , <<        ,,                                 <   <           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <  <   <                           <      <     <              |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |           <                       >  >            , ,,         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x99    |,,,,,,,,,,,,,,,,|
+  x94    |                |
+  x83    |                |
+
+./soup.py --n 4096 --seed 1733 --epochs 100000
+
+ 100000      0.0970      245.1         1   347.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |      <  <                           {         <     ,,         |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   <    [    [[  [[[ [[ [[[[[[[[ [[ [ [[[<[   [[[]              |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |[  ]                       + +   + +   +,   +   . >>   <  <<    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x100   |,,,,,,,,,,,,,,,,|
+  x94    |                |
+  x87    |................|
+
+./soup.py --n 4096 --seed 1732 --epochs 100000
+
+ 100000      0.1001      246.4         1   373.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |  -                >     ,        }       +     ,               |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |}                      <              .       ,,  ,<<   >     > |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | ,<<  ,                                     +  +   < >          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x131   |                |
+  x128   |,,,,,,,,,,,,,,,,|
+  x126   |<<<<<<<<<<<<<<<<|
+
+./soup.py --n 4096 --seed 1735 --epochs 100000
+
+ 100000      0.0647      215.4         1   356.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |      > <<<+                                    > >             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |          >                    <  >   >>   ,- ,,   , ,          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |{                     < <  <                     <    [   0     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x124   |                |
+  x118   |                |
+  x99    |                |
+
+./soup.py --n 4096 --seed 1734 --epochs 100000
+
+ 100000      0.1353      241.1         1   362.9s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     | <              ,                 <        , ,         ,<       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  < <<,<,   < < <<< <<<<<<< <  <<<<<   << <<<<  <<<<            |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |  < < <   >      > <           ,      ,     ,,,  ,,  <          |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x92    |<<<<<<<<<<<<<<<<|
+  x88    |[[[[[[[[[[[[[[[[|
+  x84    |                |
+
+./soup.py --n 4096 --seed 1736 --epochs 100000
+
+ 100000      0.1213      259.3         1   359.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |     ,                                      0          <<<  < < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      >>       ,           ,         < . < ,             ..     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   ,       {{                                           <  ,, , |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x172   |[[[[[[[[[[[[[[[[|
+  x115   |,,,,,,,,,,,,,,,,|
+  x92    |                |
+
+./soup.py --n 4096 --seed 1737 --epochs 100000
+
+ 100000      0.1001      283.8         1   353.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |     <<,<  , <                     +              <             |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |>>>>> - ,} <} <<           < <        < +                 <   <{|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |         >        ><    >         +        <       ,    ,       |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x115   |<<<<<<<<<<<<<<<<|
+  x109   |                |
+  x91    |                |
+
+./soup.py --n 4096 --seed 1738 --epochs 100000
+
+ 100000      0.1283      287.3         1   352.2s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |] <                 . , , -                                     |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    ,      <                      <                    <        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |,,,        ,>,           .                         .   ,   ,    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x177   |,,,,,,,,,,,,,,,,|
+  x145   |<<<<<<<<<<<<<<<<|
+  x122   |                |
+
+./soup.py --n 4096 --seed 1739 --epochs 100000
+
+ 100000      0.1098      246.4         1   363.8s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |            <    +                              <             >>|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | <                        >  > < < <>  ,   <{,                  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |   ,-            ,    ,   ,     ,       ,    +                  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x334   |<<<<<<<<<<<<<<<<|
+  x141   |                |
+  x126   |                |
+
+./soup.py --n 4096 --seed 1740 --epochs 100000
+
+ 100000      0.0883      188.1         1   334.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |}{   <<                  <          < <   ,    -        ,    .  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |{        <       ..                                     < <<    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |    <             }                       <            <        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x113   |                |
+  x86    |                |
+  x84    |                |
+
+./soup.py --n 4096 --seed 1741 --epochs 100000
+
+ 100000      0.0752      202.1         1   363.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |{                                          <    ,,< <     }   } |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                 <                         ,,, , ,     ,        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |      <           } <               , +           >>     ,      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x234   |<<<<<<<<<<<<<<<<|
+  x131   |,,,,,,,,,,,,,,,,|
+  x100   |[[[[[[[[[[[[[[[[|
+
+./soup.py --n 4096 --seed 1742 --epochs 100000
+
+ 100000      0.1366      220.7         1   337.7s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |,                                                               |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | < <  ,  <   ,,-  <   <,              <        <   , , +        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                                           <        <  >  <<    |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x232   |<<<<<<<<<<<<<<<<|
+  x122   |                |
+  x115   |                |
+
+./soup.py --n 4096 --seed 1743 --epochs 100000
+
+ 100000      0.1475      194.5         1   343.0s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |    ,<<<-             <      <      <      <                   {|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |                    >>>>>                              ,    < < |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |         ,, <                                       ,           |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x171   |                |
+  x136   |                |
+  x109   |,,,,,,,,,,,,,,,,|
+
+./soup.py --n 4096 --seed 1744 --epochs 100000
+
+ 100000      0.0581      158.4         1   354.5s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |                                                                |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |       >><   ,           +                  ,        ,, <,      |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     | << -    ,<                   > <             <   ,< < <        |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x149   |,,,,,,,,,,,,,,,,|
+  x114   |                |
+  x70    |>>>>>>>>>>>>>>>>|
+
