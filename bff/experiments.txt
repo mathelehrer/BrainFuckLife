@@ -149,3 +149,20 @@ most common 16-byte substrings (the replicating core):
   x16666 |        [     <}|
   x14546 |       [     <},|
   x13195 |           [    |
+
+ ./soup.py --n 131072 --seed 13 --epochs 1000000
+
+*** state transition: complexity crossed 1.0 at epoch 2000 ***
+
+most common whole tapes:
+  x374   |    [[ [{ . >   ]<           < ] <           <]   > . {[ [[     |
+         exact self-copy 0% of trials, median 31/64 bytes copied into the food tape
+  x371   |     [[ [{ . >   ]<           < ] <           <]   > . {[ [[    |
+         exact self-copy 0% of trials, median 31/64 bytes copied into the food tape
+  x348   |     [[ [{ . >   ]<           < ] <           <]   > . {[ [[    |
+         exact self-copy 0% of trials, median 63/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x31927 |                |
+  x29535 |                |
+  x25359 |    [[ [{ . >   |

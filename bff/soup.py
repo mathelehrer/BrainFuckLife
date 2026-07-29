@@ -242,6 +242,7 @@ def main() -> None:
     ap.add_argument("--stop-at", type=float, default=1.0,
                     help="stop once complexity exceeds this (0 = never)")
     ap.add_argument("--skip-check", action="store_true")
+    ap.add_argument("--soup",type=int,default=0)
     args = ap.parse_args()
 
     mut = 0.0 if args.no_mutation else args.mutation
@@ -299,6 +300,13 @@ def main() -> None:
             for r in rows:
                 f.write(f"{r[0]},{r[1]:.6f},{r[2]:.3f},{r[3]}\n")
         print(f"\nwrote {args.csv}")
+
+    if args.soup:
+        with open("soup_data.dat", "w") as f:
+            for tape in soup.tapes():
+                # for val in tape:
+                #     print(val, end=" ")
+                f.write(render(tape)+": "+str(tape)+"\n")
 
 
 if __name__ == "__main__":
