@@ -33153,3 +33153,22 @@ most common 16-byte substrings (the replicating core):
   x114   |                |
   x70    |>>>>>>>>>>>>>>>>|
 
+./soup.py --n 4096 --seed 1745 --epochs 100000
+
+ 100000      0.1018      220.0         1   365.3s
+
+no transition within 100000 epochs (the paper sees one in ~40% of runs within 16k epochs)
+
+most common whole tapes:
+  x1     |   }          <  <           <                              <   |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |             <              < }    <     <<    <>            <  |
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+  x1     |     ,   0     ,      <                            <    <<     <|
+         exact self-copy 0% of trials, median 1/64 bytes copied into the food tape
+
+most common 16-byte substrings (the replicating core):
+  x155   |[[[[[[[[[[[[[[[[|
+  x112   |                |
+  x111   |                |
+
