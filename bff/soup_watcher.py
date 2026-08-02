@@ -63,7 +63,10 @@ def watch(soup: Soup, epochs: int, every: int, top: int, out_path: pathlib.Path,
         for _ in range(epochs):
             soup.step()
             if soup.epoch % every == 0:
-                for tape, _count in soup.most_common(top):
+                # for tape, _count in soup.most_common(top):
+                #     f.write(";".join(str(ord(ch)) for ch in render(tape)) + "\n")
+                for i in range(top):
+                    tape = soup.tapes()[i]
                     f.write(";".join(str(ord(ch)) for ch in render(tape)) + "\n")
                 f.flush()
                 if soup.epoch % report_every == 0:
