@@ -26,26 +26,47 @@ been time for the soup's interactions to produce duplicates yet. As
 replicators emerge, the same handful of tapes start dominating those
 snapshots instead.
 
-The file is flushed after every snapshot, so it is safe to tail it (or
-interrupt the run with Ctrl-C) while the soup is still evolving.
+Alongside it a second, much smaller csv (``compression.csv`` by default)
+records how many bytes the *whole* soup compresses down to, one row per
+epoch - the raw material behind the complexity curve, with no epochs
+skipped.
+
+Both files are flushed after every snapshot, so it is safe to tail them
+(or interrupt the run with Ctrl-C) while the soup is still evolving.
 
 Usage:
     python3 soup_watcher.py                       # 1024 tapes, 20000 epochs
     python3 soup_watcher.py --n 4096 --epochs 100000
     python3 soup_watcher.py --out soup_evolution_bytes.csv --every 10 --top 100
+    python3 soup_watcher.py --compression ""      # skip the compression csv
 """
 from __future__ import annotations
 
 import argparse
+import contextlib
 import pathlib
 import time
 
-from soup import Soup, TAPE, render
+from soup import Soup, TAPE, render, _compressed_size, COMPRESSOR
 
 HERE = pathlib.Path(__file__).parent
 
 
+def compressed_size(soup: Soup) -> int:
+    """How many bytes the whole soup takes up once compressed.
+
+    Uncompressed it is always ``soup.n * TAPE`` bytes; this is what those
+    same bytes shrink to under the compressor ``soup.py`` measures
+    complexity with (brotli -q2 if installed, else zlib -6). While the soup
+    is still noise it barely compresses at all, so the number sits just
+    under the raw size; once a replicator takes over, the soup is largely
+    the same program repeated and the number collapses.
+    """
+    return _compressed_size(soup.buf.tobytes())
+
+
 def watch(soup: Soup, epochs: int, every: int, top: int, out_path: pathlib.Path,
+         compression_path: pathlib.Path | None = None,
          report_every: int = 100) -> None:
     """Step ``soup`` for ``epochs`` epochs, snapshotting it along the way.
 
@@ -53,15 +74,28 @@ def watch(soup: Soup, epochs: int, every: int, top: int, out_path: pathlib.Path,
     are appended to ``out_path`` - no epoch marker, no count, just the
     tapes themselves, each a row of 64 ``;``-delimited byte codes (see the
     module docstring). A ``c0;..;c63`` header is written once, first.
+
+    If ``compression_path`` is given, a second ``;``-delimited csv is
+    written there with a row ``epoch;bytes`` for *every* epoch, ``bytes``
+    being :func:`compressed_size` of the soup at the end of that epoch.
     """
     t0 = time.time()
-    with open(out_path, "w") as f:
+    with contextlib.ExitStack() as stack:
+        f = stack.enter_context(open(out_path, "w"))
+        cf = (stack.enter_context(open(compression_path, "w"))
+              if compression_path is not None else None)
         f.write(";".join(f"c{c}" for c in range(TAPE)) + "\n")
         print(f"watching soup: {soup.n} tapes x {TAPE} bytes | snapshotting the "
               f"top {top} tapes every {every} epochs -> {out_path}")
+        if cf is not None:
+            cf.write("epoch;bytes\n")
+            print(f"compressed size per epoch ({COMPRESSOR}, "
+                  f"{soup.n * TAPE} bytes raw) -> {compression_path}")
         print(f"{'epoch':>7} {'complexity':>11} {'elapsed':>8}")
         for _ in range(epochs):
             soup.step()
+            if cf is not None:
+                cf.write(f"{soup.epoch};{compressed_size(soup)}\n")
             if soup.epoch % every == 0:
                 # for tape, _count in soup.most_common(top):
                 #     f.write(";".join(str(ord(ch)) for ch in render(tape)) + "\n")
@@ -69,6 +103,8 @@ def watch(soup: Soup, epochs: int, every: int, top: int, out_path: pathlib.Path,
                     tape = soup.tapes()[i]
                     f.write(";".join(str(ord(ch)) for ch in render(tape)) + "\n")
                 f.flush()
+                if cf is not None:
+                    cf.flush()
                 if soup.epoch % report_every == 0:
                     print(f"{soup.epoch:>7} {soup.complexity():>11.4f} "
                           f"{time.time() - t0:>7.1f}s")
@@ -91,14 +127,19 @@ def main() -> None:
                     help="how many of the most frequent tapes to store per snapshot")
     ap.add_argument("--out", type=str, default="soup_evolution_bytes.csv",
                     help="byte csv the snapshots are written to")
+    ap.add_argument("--compression", type=str, default="compression.csv",
+                    help="csv of the compressed soup size in bytes, one row "
+                         "per epoch (pass an empty string to skip it)")
     args = ap.parse_args()
 
     mut = 0.0 if args.no_mutation else args.mutation
     soup = Soup(args.n, seed=args.seed, mutation_prob=mut)
     out_path = HERE / args.out
+    compression_path = HERE / args.compression if args.compression else None
 
     try:
-        watch(soup, args.epochs, args.every, args.top, out_path)
+        watch(soup, args.epochs, args.every, args.top, out_path,
+              compression_path=compression_path)
     except KeyboardInterrupt:
         print(f"\ninterrupted at epoch {soup.epoch}")
 
