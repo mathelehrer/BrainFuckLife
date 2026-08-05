@@ -92,11 +92,11 @@ def watch(soup: Soup, epochs: int, every: int, top: int, out_path: pathlib.Path,
             print(f"compressed size per epoch ({COMPRESSOR}, "
                   f"{soup.n * TAPE} bytes raw) -> {compression_path}")
         print(f"{'epoch':>7} {'complexity':>11} {'elapsed':>8}")
-        for _ in range(epochs):
+        for epoch in range(epochs):
             soup.step()
             if cf is not None:
                 cf.write(f"{soup.epoch};{compressed_size(soup)}\n")
-            if soup.epoch % every == 0:
+            if soup.epoch % every == 0 and 8000 < epoch <= 10000:
                 # for tape, _count in soup.most_common(top):
                 #     f.write(";".join(str(ord(ch)) for ch in render(tape)) + "\n")
                 for i in range(top):
@@ -124,7 +124,7 @@ def main() -> None:
     ap.add_argument("--every", type=int, default=10,
                     help="epochs between snapshots")
     ap.add_argument("--top", type=int, default=100,
-                    help="how many of the most frequent tapes to store per snapshot")
+                    help="how many of the first tapes to store per snapshot")
     ap.add_argument("--out", type=str, default="soup_evolution_bytes.csv",
                     help="byte csv the snapshots are written to")
     ap.add_argument("--compression", type=str, default="compression.csv",
